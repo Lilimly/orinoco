@@ -1,0 +1,66 @@
+// Paramètres flex
+@mixin flex_column
+{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+@mixin flex_center
+{
+    display: flex;
+    justify-content: center;
+}
+
+@mixin flex_space_between
+{
+    display: flex;
+	justify-content: space-between;
+}
+
+@mixin flex_sticky
+{
+    display: flex;
+    justify-content: space-around;
+    position: sticky;
+    bottom: 0;
+    margin: 0px;
+}
+
+// Paramètres header
+@mixin header
+{
+    font-family: $main_font;
+    font-size: 1.3em;
+    background-color: $primary_color;
+    height: auto;
+}
+
+// Paramètres main
+@mixin main
+{
+    background-color: $second_color;
+    margin: auto;
+    padding-bottom: 40px;
+}
+
+// paramètres section
+@mixin section
+{
+    width: 350px;
+    height: 350px;
+    margin: 10px;
+    text-align: center;
+    font-family: $main_font
+}
+
+// Paramètres footer
+@mixin footer
+{
+    margin: auto;
+    height: auto;
+    background-color: $primary_color;
+    color: $main_color;
+    position: sticky;
+    bottom: 0;
+}
