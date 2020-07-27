@@ -18,13 +18,6 @@ header .header {
   padding: 5px;
 }
 
-header h1 {
-  font-size: 1.5em;
-  color: #454545;
-  margin-top: auto;
-  margin-bottom: auto;
-}
-
 header a img {
   max-width: max-content;
   display: inline-block;
@@ -37,23 +30,29 @@ main {
   padding-bottom: 40px;
 }
 
-main h2 {
+main h1 {
   font-family: "Montserrat", sans-serif;
-  font-size: 1.5em;
+  font-size: 2em;
   color: #454545;
   text-align: center;
   margin: auto;
   padding-top: 20px;
 }
 
+main h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2em;
+  color: #454545;
+  text-align: center;
+  margin: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 .bears {
   display: flex;
   justify-content: center;
   margin: 30px;
-}
-
-.bears h2 {
-  font-size: 2.3em;
 }
 
 section {
@@ -91,33 +90,31 @@ footer h2 {
   color: #454545;
   text-align: center;
   margin: auto;
-  padding-top: 15px;
-  padding-bottom: 5px;
+  padding-top: 10px;
+  padding-bottom: 8px;
 }
 
 footer a {
   color: #454545;
   margin: auto;
-  padding-bottom: 15px;
+  padding-bottom: 12px;
   font-family: "Montserrat", sans-serif;
   font-size: 0.9em;
 }
 
 @media only screen and (max-width: 360px) {
-  header .header h1 {
-    font-size: 1.2em;
-  }
-  header .header a img {
-    width: 70%;
-  }
   main {
     display: flex;
     justify-content: center;
     flex-direction: column;
   }
-  main h2 {
+  main h1 {
     font-size: 1.2em;
+  }
+  main h2 {
+    font-size: 1em;
     margin-bottom: 10px;
+    width: 80%;
   }
   .bears {
     display: flex;
@@ -136,23 +133,20 @@ footer a {
     bottom: 0;
     margin: 0px;
   }
+  footer h2 {
+    width: 80%;
+  }
 }
 
 @media only screen and (max-width: 760px) and (min-width: 360px) {
-  header .header h1 {
-    font-size: 1.2em;
-  }
-  header .header a img {
-    width: 80%;
-  }
   main {
     display: flex;
     justify-content: center;
     flex-direction: column;
   }
   main h2 {
-    font-size: 1.2em;
     margin-bottom: 10px;
+    width: 80%;
   }
   .bears {
     display: flex;
@@ -170,6 +164,9 @@ footer a {
     position: sticky;
     bottom: 0;
     margin: 0px;
+  }
+  footer h2 {
+    width: 80%;
   }
 }
 

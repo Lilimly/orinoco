@@ -18,12 +18,6 @@ header {
         margin: auto;
         padding: 5px;
     }
-    h1{
-        font-size: 1.5em;
-        color: $main_color;
-        margin-top: auto;
-        margin-bottom: auto;
-    }
     a img{
         max-width: max-content;
         display: inline-block;
@@ -36,13 +30,22 @@ header {
 main
 {
     @include main;
-    h2{
+    h1{
         font-family: $main_font;
-        font-size: 1.5em;
+        font-size: 2em;
         color: $main_color;
         text-align: center;
         margin: auto;
         padding-top: 20px;
+    }
+    h2{
+        font-family: $main_font;
+        font-size: 1.2em;
+        color: $main_color;
+        text-align: center;
+        margin: auto;
+        padding-top: 10px;
+        padding-bottom: 10px;
     }
 }
 
@@ -50,11 +53,6 @@ main
 {
     @include flex_center;
     margin: 30px;
-
-    h2 
-    {
-        font-size: 2.3em;
-    }
 }
 
 // section
@@ -80,13 +78,13 @@ footer
         color: $main_color;
         text-align: center;
         margin: auto;
-        padding-top: 15px;
-        padding-bottom: 5px;
+        padding-top: 10px;
+        padding-bottom: 8px;
     }
     a{
         color: $main_color;
         margin: auto;
-        padding-bottom: 15px;
+        padding-bottom: 12px;
         font-family: $main_font;
         font-size: 0.9em;
     }
@@ -96,22 +94,15 @@ footer
 // écrans moins de 360px
 @media #{$x_small_screen}
 {
-    header {
-        .header{
-            h1{
-                font-size: 1.2em;
-            }
-            a img{
-                width: 70%;
-            }
-        }
-    }
-
     main{
         @include flex_column;
-        h2 {
+        h1 {
             font-size: 1.2em;
+        }
+        h2{
+            font-size: 1em;
             margin-bottom: 10px;
+            width: 80%;
         }
     }
 
@@ -130,28 +121,22 @@ footer
     footer
     {
         @include flex_sticky;
+        h2{
+            width: 80%;
+        }
     }
 }
 
 // écrans plus de 360px et moins de 760 px 
 @media #{$small_screen}
 {
-    header {
-        .header{
-            h1{
-                font-size: 1.2em;
-            }
-            a img{
-                width: 80%;
-            }
-        }
-    }
-
     main{
         @include flex_column;
         h2 {
-            font-size: 1.2em;
+            
+            
             margin-bottom: 10px;
+            width: 80%;
         }
     }
 
@@ -170,6 +155,9 @@ footer
     footer
     {
         @include flex_sticky;
+        h2{
+            width: 80%;
+        }
     }
 }
 
