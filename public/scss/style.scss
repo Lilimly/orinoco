@@ -57,6 +57,7 @@ section
     box-shadow: $box_shadow;
     margin: 20px auto 20px auto;
     padding: 20px;
+    background-color: $primary_color;
     h3{
         color: $main_color;
         margin: auto;
@@ -67,6 +68,8 @@ section
         margin: auto;
         width: 200px;
         height: auto;
+        border-radius: 20%;
+        box-shadow: $box_shadow;
     }
 }
 
