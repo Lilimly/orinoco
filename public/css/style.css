@@ -50,14 +50,14 @@ main h2 {
 }
 
 section {
-  width: 350px;
+  width: 500px;
   height: 350px;
   text-align: center;
   font-family: "Montserrat", sans-serif;
   display: flex;
   justify-content: center;
   box-shadow: 0 0 20px #bababa;
-  margin: 20px auto 20px auto;
+  margin: 30px auto 30px auto;
   padding: 20px;
   background-color: #f3e9f1;
 }
@@ -71,7 +71,7 @@ section h3 {
 
 section img {
   margin: auto;
-  width: 200px;
+  width: 250px;
   height: auto;
   border-radius: 20%;
   box-shadow: 0 0 20px #bababa;
@@ -129,8 +129,12 @@ footer a {
     margin: auto;
   }
   section {
-    width: 280px;
-    height: 280px;
+    width: 250px;
+    height: 180px;
+    margin: 20px auto 20px auto;
+  }
+  section img {
+    width: 140px;
   }
   footer {
     display: flex;
@@ -162,7 +166,11 @@ footer a {
   }
   section {
     width: 300px;
-    height: 300px;
+    height: 200px;
+    margin: 20px auto 20px auto;
+  }
+  section img {
+    width: 150px;
   }
   footer {
     display: flex;

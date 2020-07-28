@@ -55,7 +55,7 @@ section
     @include section;
     @include flex_center;
     box-shadow: $box_shadow;
-    margin: 20px auto 20px auto;
+    margin: 30px auto 30px auto;
     padding: 20px;
     background-color: $primary_color;
     h3{
@@ -66,7 +66,7 @@ section
     }
     img{
         margin: auto;
-        width: 200px;
+        width: 250px;
         height: auto;
         border-radius: 20%;
         box-shadow: $box_shadow;
@@ -121,8 +121,12 @@ footer
 
     section
     {
-        width: 280px;
-        height: 280px;
+        width: 250px;
+        height: 180px;
+        margin: 20px auto 20px auto;
+        img{
+            width: 140px;
+        }
     }
 
     footer
@@ -140,8 +144,6 @@ footer
     main{
         @include flex_column;
         h2 {
-            
-            
             margin-bottom: 10px;
             width: 80%;
         }
@@ -156,7 +158,11 @@ footer
     section
     {
         width: 300px;
-        height: 300px;
+        height: 200px;
+        margin: 20px auto 20px auto;
+        img{
+            width: 150px;
+        }
     }
 
     footer
