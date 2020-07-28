@@ -49,20 +49,24 @@ main
     }
 }
 
-.bears
-{
-    @include flex_center;
-    margin: 30px;
-}
-
 // section
 section
 {
     @include section;
-    @include flex_column;
+    @include flex_center;
     box-shadow: $box_shadow;
+    margin: 20px auto 20px auto;
+    padding: 20px;
     h3{
         color: $main_color;
+        margin: auto;
+        padding-left: 10px;
+        padding-right: 20px;
+    }
+    img{
+        margin: auto;
+        width: 200px;
+        height: auto;
     }
 }
 
@@ -106,7 +110,7 @@ footer
         }
     }
 
-    .bears
+    #teddies
     {
         @include flex_column;
         margin: auto;
@@ -140,7 +144,7 @@ footer
         }
     }
 
-    .bears
+    #teddies
     {
         @include flex_column;
         margin: auto;
