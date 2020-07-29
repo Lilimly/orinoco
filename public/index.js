@@ -1,5 +1,5 @@
 const element = document.getElementById('teddies');
-element.innerHTML = '<section class="teddy"><img class="teddy_img" src="" alt="" title=""><h3 class="teddy_name"></h3></section>';
+element.innerHTML = '<section class="teddy"><img class="teddy_img" src="" alt="" title=""><div class="teddy_ref"><h3 class="teddy_name"></h3><p class ="teddy_price"></p></div></section>';
 const teddySection = element.innerHTML;
 
 const getTeddies = async function() {
@@ -16,6 +16,7 @@ const getTeddies = async function() {
         newTeddy.querySelector('.teddy_img').alt = "Ours en peluche " + teddy.name;
         newTeddy.querySelector('.teddy_img').title = "Ours en peluche " + teddy.name;
         newTeddy.querySelector('.teddy_name').textContent = teddy.name;
+        newTeddy.querySelector('.teddy_price').textContent = teddy.price + " $";
         
         element.appendChild(newTeddy);
     }

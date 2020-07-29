@@ -32,7 +32,7 @@ main
     h1{
         font-family: $main_font;
         font-size: 2em;
-        color: $main_color;
+        color: $name_color;
         text-align: center;
         margin: auto;
         padding-top: 20px;
@@ -40,6 +40,7 @@ main
     h2{
         font-family: $main_font;
         font-size: 1.2em;
+        font-weight: lighter;
         color: $main_color;
         text-align: center;
         margin: auto;
@@ -53,12 +54,7 @@ section
 {
     @include section;
     @include flex_center;
-    h3{
-        color: $main_color;
-        margin: auto;
-        padding-left: 10px;
-        padding-right: 20px;
-    }
+
     img{
         margin: auto;
         width: 250px;
@@ -66,6 +62,18 @@ section
         border-radius: 20%;
         box-shadow: $box_shadow;
     }
+    .teddy_ref{
+        margin: auto;
+        h3{
+            color: $name_color;
+            padding-left: 10px;
+            padding-right: 20px;
+        }
+        p{
+            color: $main_color;
+        }
+    }
+    
 }
 
 // footer
@@ -84,11 +92,14 @@ footer
         padding-bottom: 8px;
     }
     a{
-        color: $main_color;
+        color: $name_color;
         margin: auto;
         padding-bottom: 12px;
         font-family: $main_font;
         font-size: 0.9em;
+        &:hover{
+            color: $main_color;
+        }
     }
 }
   
@@ -121,6 +132,9 @@ footer
         margin: 20px auto 20px auto;
         img{
             width: 140px;
+        }
+        .teddy_ref{
+            margin: auto;
         }
     }
 
@@ -157,6 +171,9 @@ footer
         margin: 20px auto 20px auto;
         img{
             width: 150px;
+        }
+        .teddy_ref{
+            margin: auto;
         }
     }
 
