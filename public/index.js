@@ -1,5 +1,5 @@
 const element = document.getElementById('teddies');
-element.innerHTML = '<section class="teddy"><img class="teddy_img" src=""><h3 class="teddy_name"></h3></section>';
+element.innerHTML = '<section class="teddy"><img class="teddy_img" src="" alt="" title=""><h3 class="teddy_name"></h3></section>';
 const teddySection = element.innerHTML;
 
 const getTeddies = async function() {
@@ -13,6 +13,8 @@ const getTeddies = async function() {
         const newTeddy = document.createRange().createContextualFragment(teddySection);
         
         newTeddy.querySelector('.teddy_img').src = teddy.imageUrl;
+        newTeddy.querySelector('.teddy_img').alt = "Ours en peluche " + teddy.name;
+        newTeddy.querySelector('.teddy_img').title = "Ours en peluche " + teddy.name;
         newTeddy.querySelector('.teddy_name').textContent = teddy.name;
         
         element.appendChild(newTeddy);
@@ -20,7 +22,6 @@ const getTeddies = async function() {
     
 
 }
-
 
 getTeddies();
 
