@@ -1,6 +1,6 @@
 const getTeddies = async function() {
     let response = await fetch('http://localhost:3000/api/teddies')
-    let teddies = await response.json()
+    let teddies = await response.json().catch(error => alert("Erreur : " + error));
     console.log(teddies);
 
     for (let teddy of teddies) {
@@ -38,12 +38,6 @@ const getTeddies = async function() {
 }
 
 getTeddies();
-
-/* function getTeddies(){
-    const response = fetch("http://localhost:3000/api/teddies")
-        .then(response => response.json()).then(console.log)
-        .catch(error => alert("Erreur : " + error));
-}*/
 
 
 
