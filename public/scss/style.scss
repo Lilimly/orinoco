@@ -11,7 +11,6 @@ body {
 // header
 header {
     @include header;
-    height: auto;
     .header{
         display: flex;
         justify-content: center;
@@ -54,10 +53,6 @@ section
 {
     @include section;
     @include flex_center;
-    box-shadow: $box_shadow;
-    margin: 30px auto 30px auto;
-    padding: 20px;
-    background-color: $primary_color;
     h3{
         color: $main_color;
         margin: auto;

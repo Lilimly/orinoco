@@ -50,7 +50,11 @@
     width: 500px;
     height: 350px;
     text-align: center;
-    font-family: $main_font
+    font-family: $main_font;
+    box-shadow: $box_shadow;
+    margin: 30px auto 30px auto;
+    padding: 20px;
+    background-color: $primary_color;
 }
 
 // Paramètres footer

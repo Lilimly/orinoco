@@ -8,7 +8,6 @@ header {
   font-size: 1.3em;
   background-color: #f3e9f1;
   height: auto;
-  height: auto;
 }
 
 header .header {
@@ -54,12 +53,12 @@ section {
   height: 350px;
   text-align: center;
   font-family: "Montserrat", sans-serif;
-  display: flex;
-  justify-content: center;
   box-shadow: 0 0 20px #bababa;
   margin: 30px auto 30px auto;
   padding: 20px;
   background-color: #f3e9f1;
+  display: flex;
+  justify-content: center;
 }
 
 section h3 {
