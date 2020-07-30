@@ -18,6 +18,7 @@ const getTeddies = async function() {
         productLink.href = "produit.html?id=" + teddy._id;
         teddiesSection.appendChild(productLink);
         productLink.className = 'section_zoom';
+        productLink.setAttribute('title', "L'ourson " + teddy.name + " vous attend !");
 
         //création image Teddy + src, alt et title
         const teddyImg = document.createElement('img');

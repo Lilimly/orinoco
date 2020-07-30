@@ -32,7 +32,7 @@ main {
 main h1 {
   font-family: "Montserrat", sans-serif;
   font-size: 2em;
-  color: #ffffff;
+  color: tomato;
   text-align: center;
   margin: auto;
   padding-top: 20px;
@@ -83,6 +83,7 @@ section a .teddy_ref h3 {
 
 section a .teddy_ref p {
   color: #f3e9f1;
+  font-style: italic;
 }
 
 .logo_zoom {

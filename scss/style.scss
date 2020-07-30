@@ -32,7 +32,7 @@ main
     h1{
         font-family: $main_font;
         font-size: 2em;
-        color: $body_color;
+        color: $section_color;
         text-align: center;
         margin: auto;
         padding-top: 20px;
@@ -74,7 +74,7 @@ section
         }
         p{
             color: $primary_color;
-            
+            font-style: italic;
         }
     }
     }   
@@ -92,6 +92,7 @@ section
         transform: scale(1);
     }
 }
+
 .section_zoom
 {
     
