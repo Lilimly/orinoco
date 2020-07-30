@@ -32,7 +32,7 @@ main
     h1{
         font-family: $main_font;
         font-size: 2em;
-        color: $name_color;
+        color: $body_color;
         text-align: center;
         margin: auto;
         padding-top: 20px;
@@ -52,9 +52,10 @@ main
 // section
 section
 {
+    a{
     @include section;
     @include flex_center;
-
+    text-decoration: none;
     img{
         margin: auto;
         width: 250px;
@@ -64,16 +65,45 @@ section
     }
     .teddy_ref{
         margin: auto;
+        
         h3{
-            color: $name_color;
+            color: $body_color;
             padding-left: 10px;
             padding-right: 20px;
+            
         }
         p{
-            color: $main_color;
+            color: $primary_color;
+            
         }
     }
+    }   
+}
+
+//animation a class "zoom"
+.logo_zoom
+{
+    opacity: 0.9;
+    transform: scale(0.9);
+    transition: transform 300ms ease-in-out;
+    &:hover 
+    {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+.section_zoom
+{
     
+    transform: scale(0.95);
+    background-color: $section_color;
+    transition: transform 300ms ease-in-out;
+    &:hover 
+    {
+        
+        transform: scale(1);
+        background-color: $hover_color_section;
+    }
 }
 
 // footer
@@ -92,13 +122,13 @@ footer
         padding-bottom: 8px;
     }
     a{
-        color: $name_color;
+        color: $section_color;
         margin: auto;
         padding-bottom: 12px;
         font-family: $main_font;
         font-size: 0.9em;
         &:hover{
-            color: $main_color;
+            color: $hover_color_link;
         }
     }
 }
@@ -125,7 +155,7 @@ footer
         margin: auto;
     }
 
-    section
+    section a
     {
         width: 250px;
         height: 180px;
@@ -164,7 +194,7 @@ footer
         margin: auto;
     }
 
-    section
+    section a
     {
         width: 300px;
         height: 200px;

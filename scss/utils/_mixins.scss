@@ -39,7 +39,7 @@
 // Paramètres main
 @mixin main
 {
-    background-color: $second_color;
+    background-color: $body_color;
     margin: auto;
     padding-bottom: 40px;
 }
@@ -54,7 +54,7 @@
     box-shadow: $box_shadow;
     margin: 30px auto 30px auto;
     padding: 20px;
-    background-color: $primary_color;
+    background-color: $section_color;
 }
 
 // Paramètres footer
