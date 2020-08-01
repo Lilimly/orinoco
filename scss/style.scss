@@ -133,40 +133,63 @@ footer {
     height: auto;
     width: 70%;
     img {
-        width: 40%;
-        height: auto;
-        margin: 50px;
+        width: 50%;
+        height: 50%;
+        margin: 50px auto 50px 40px;
         border-radius: 20%;
         box-shadow: $box_shadow;
     }
+    
     .teddy_info {
         font-family: $main_font;
         color: $main_color;
         text-align: center;
         margin: auto;
         width: 40%;
+        padding: 20px;
         h3 {
             color: $body_color;
+            margin-bottom: 30px;
         }
         p {
-            padding: 20px;
-            color: $primary_color;
+            padding: 5px;
+            color: $primary_color;  
+        }
+        .teddy_price {
+            font-weight: 500;
+            color: $body_color;
         }
     }
 }
 
-// éléments formulaire choix de couleur
-.colors_choice{
-    @include flex_column;
+// éléments formulaire
+form {
+    margin: 10px;
+}
+
+// choix couleur
+.colors_choice {
+    margin-bottom: 10px;
     label {
         color: $body_color;
     }
     select {
-        margin: 20px auto 20px auto;
+        margin: 5px;
         padding: 5px;
         border-radius: 10px;
-        box-shadow: $box_shadow;
         width: auto;
+    }
+}
+
+// éléments div2
+.number{
+    label {
+        color: $body_color;
+    }
+    input {
+        padding: 5px;
+        margin: 5px;
+        border-radius: 10px;
     }
 }
 
@@ -177,8 +200,6 @@ footer {
     font-family: $main_font;
 }
     
-
-  
 // responsive
 // écrans moins de 360px
 @media #{$x_small_screen}
@@ -224,7 +245,7 @@ footer {
         img {
             margin: auto;
             width: 80%;
-            height: auto;
+            height: 80%;
         }
         .teddy_info {
             width: 80%;
@@ -269,9 +290,9 @@ footer {
     .teddy_ref {
         @include flex_column;
         img {
-            margin: 30px auto 30px auto;
+            margin: 30px auto auto auto;
             width: 80%;
-            height: auto;
+            height: 80%;
         }
         .teddy_info {
             width: 80%;
@@ -289,9 +310,9 @@ footer {
     .teddy_ref {
         @include flex_column;
         img {
-            margin: 30px auto 30px auto;
-            width: 80%;
-            height: auto;
+            margin: 50px auto auto auto;
+            width: 70%;
+            height: 70%;
         }
         .teddy_info {
             width: 80%;

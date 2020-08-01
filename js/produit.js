@@ -46,6 +46,12 @@ const getTeddies = async function() {
     teddyDivInfo.appendChild(teddyPar);
     teddyPar.textContent = teddy.description;
 
+    // ajout prix
+    const teddyPrice = document.createElement('p');
+    teddyDivInfo.appendChild(teddyPrice);
+    teddyPrice.textContent = "Son prix : " + teddy.price / 100 + " €";
+    teddyPrice.className = 'teddy_price';
+
     // création choix couleur
     const form = document.createElement('form');
     teddyDivInfo.appendChild(form);
@@ -55,7 +61,7 @@ const getTeddies = async function() {
 
     const label = document.createElement('label');
     formDiv.appendChild(label);
-    label.textContent = "Personnalisez la couleur de " + teddy.name + " : ";
+    label.textContent = "Personnalisez sa couleur : ";
     label.setAttribute('for', "Choix de couleurs de " + teddy.name);
 
     const select = document.createElement('select');
@@ -73,10 +79,24 @@ const getTeddies = async function() {
         selectOption.setAttribute("value", colors[i]);
     }
 
-    // ajout prix
-    const teddyPrice = document.createElement('p');
-    teddyDivInfo.appendChild(teddyPrice);
-    teddyPrice.textContent = "Prix de "+ teddy.name + " : " + teddy.price / 100 + " €";
+    // ajout nombre de produit désiré
+    const formDiv2 = document.createElement('div');
+    form.appendChild(formDiv2);
+    formDiv2.className = 'number';
+
+    const label2 = document.createElement('label');
+    formDiv2.appendChild(label2);
+    label2.textContent = "Nombre souhaité : ";
+    label2.setAttribute('for', "Nombre souhaité");
+ 
+    const input = document.createElement('input');
+    formDiv2.appendChild(input);
+    input.setAttribute('type', "number");
+    input.setAttribute('name', "number");
+    input.setAttribute('id', "number");
+    input.setAttribute('min', "1");
+    input.setAttribute('max', "10");
+    input.setAttribute('step', "1");
 
 }
 
