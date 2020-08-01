@@ -30,7 +30,7 @@ const getTeddies = async function() {
         //création div teddyRef
         const teddiesRef = document.createElement('div');
         productLink.appendChild(teddiesRef);
-        teddiesRef.className = 'teddy_ref';
+        teddiesRef.className = 'teddies_ref';
 
         //création h3 de teddyRef
         const h3TeddiesRef = document.createElement('h3');

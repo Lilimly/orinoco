@@ -40,11 +40,11 @@ main h1 {
 
 main h2 {
   font-family: "Montserrat", sans-serif;
-  font-size: 1.2em;
-  font-weight: lighter;
   color: #454545;
   text-align: center;
   margin: auto;
+  font-size: 1.2em;
+  font-weight: lighter;
   padding-top: 10px;
   padding-bottom: 10px;
 }
@@ -58,9 +58,9 @@ section a {
   margin: 30px auto 30px auto;
   padding: 20px;
   background-color: tomato;
+  text-decoration: none;
   display: flex;
   justify-content: center;
-  text-decoration: none;
 }
 
 section a img {
@@ -71,17 +71,17 @@ section a img {
   box-shadow: 0 0 20px #bababa;
 }
 
-section a .teddy_ref {
+section a .teddies_ref {
   margin: auto;
 }
 
-section a .teddy_ref h3 {
+section a .teddies_ref h3 {
   color: #ffffff;
   padding-left: 10px;
   padding-right: 20px;
 }
 
-section a .teddy_ref p {
+section a .teddies_ref p {
   color: #f3e9f1;
   font-style: italic;
 }
@@ -143,6 +143,40 @@ footer a:hover {
   color: #ac1d04;
 }
 
+.teddy_ref {
+  display: flex;
+  box-shadow: 0 0 20px #bababa;
+  background-color: tomato;
+  margin: 30px auto 30px auto;
+  height: auto;
+  width: 70%;
+}
+
+.teddy_ref img {
+  width: 40%;
+  height: auto;
+  margin: 50px;
+  border-radius: 20%;
+  box-shadow: 0 0 20px #bababa;
+}
+
+.teddy_ref .teddy_info {
+  font-family: "Montserrat", sans-serif;
+  color: #454545;
+  text-align: center;
+  margin: auto;
+  width: 40%;
+}
+
+.teddy_ref .teddy_info h3 {
+  color: #ffffff;
+}
+
+.teddy_ref .teddy_info p {
+  padding: 20px;
+  color: #f3e9f1;
+}
+
 @media only screen and (max-width: 360px) {
   main {
     display: flex;
@@ -171,7 +205,7 @@ footer a:hover {
   section a img {
     width: 140px;
   }
-  section a .teddy_ref {
+  section a .teddies_ref {
     margin: auto;
   }
   footer {
@@ -182,6 +216,19 @@ footer a:hover {
     margin: 0px;
   }
   footer h2 {
+    width: 80%;
+  }
+  .teddy_ref {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .teddy_ref img {
+    margin: auto;
+    width: 80%;
+    height: auto;
+  }
+  .teddy_ref .teddy_info {
     width: 80%;
   }
 }
@@ -210,7 +257,7 @@ footer a:hover {
   section a img {
     width: 150px;
   }
-  section a .teddy_ref {
+  section a .teddies_ref {
     margin: auto;
   }
   footer {
@@ -223,6 +270,19 @@ footer a:hover {
   footer h2 {
     width: 80%;
   }
+  .teddy_ref {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .teddy_ref img {
+    margin: 30px auto 30px auto;
+    width: 80%;
+    height: auto;
+  }
+  .teddy_ref .teddy_info {
+    width: 80%;
+  }
 }
 
 @media only screen and (max-width: 1024px) and (min-width: 760px) {
@@ -232,6 +292,19 @@ footer a:hover {
     position: sticky;
     bottom: 0;
     margin: 0px;
+  }
+  .teddy_ref {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .teddy_ref img {
+    margin: 30px auto 30px auto;
+    width: 80%;
+    height: auto;
+  }
+  .teddy_ref .teddy_info {
+    width: 80%;
   }
 }
 
