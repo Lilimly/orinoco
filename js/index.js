@@ -1,6 +1,6 @@
 const getTeddies = async function() {
     //récupération des données de l'API 
-    let response = await fetch('http://localhost:3000/api/teddies')
+    let response = await fetch('http://localhost:3000/api/teddies/')
     let teddies = await response.json().catch(error => alert("Erreur : " + error));
     
     console.log(teddies);
@@ -40,10 +40,11 @@ const getTeddies = async function() {
         //création p de teddyRef
         const pTeddiesRef = document.createElement('p');
         teddiesRef.appendChild(pTeddiesRef);
-        pTeddiesRef.textContent = teddy.price + " €";
+        pTeddiesRef.textContent = teddy.price / 100 + " €";
     }
 }
 
+//appel de la fonction getTeddies
 getTeddies();
 
 
