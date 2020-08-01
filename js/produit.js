@@ -12,8 +12,6 @@ const getTeddies = async function() {
     // récupération des données du teddy de la page
     const teddy = teddies.find(x => x['_id'] === id);
     console.log(teddy);
-    console.log(teddy.name);
-    console.log(teddy.colors);
 
     // création h2 de la page
     const teddyMain = document.getElementById('product_page');
@@ -48,10 +46,37 @@ const getTeddies = async function() {
     teddyDivInfo.appendChild(teddyPar);
     teddyPar.textContent = teddy.description;
 
+    // création choix couleur
+    const form = document.createElement('form');
+    teddyDivInfo.appendChild(form);
+    const formDiv = document.createElement('div');
+    form.appendChild(formDiv);
+    formDiv.className = 'colors_choice';
+
+    const label = document.createElement('label');
+    formDiv.appendChild(label);
+    label.textContent = "Personnalisez la couleur de " + teddy.name + " : ";
+    label.setAttribute('for', "Choix de couleurs de " + teddy.name);
+
+    const select = document.createElement('select');
+    formDiv.appendChild(select);
+    select.setAttribute('name', "Choix de couleurs de " + teddy.name);
+    select.setAttribute('id', "Choix de couleurs de " + teddy.name);
+
+    // ajout des différentes couleurs 
+    const colors = teddy.colors;
+
+    for (i = 0; i < colors.length; i++) {
+        const selectOption = document.createElement('option');
+        select.appendChild(selectOption);
+        selectOption.textContent = colors[i];
+        selectOption.setAttribute("value", colors[i]);
+    }
+
     // ajout prix
     const teddyPrice = document.createElement('p');
     teddyDivInfo.appendChild(teddyPrice);
-    teddyPrice.textContent = teddy.price / 100 + " €";
+    teddyPrice.textContent = "Prix de "+ teddy.name + " : " + teddy.price / 100 + " €";
 
 }
 

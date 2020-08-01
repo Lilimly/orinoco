@@ -155,6 +155,29 @@ footer {
     }
 }
 
+// éléments formulaire choix de couleur
+.colors_choice{
+    @include flex_column;
+    label {
+        color: $body_color;
+    }
+    select {
+        margin: 20px auto 20px auto;
+        padding: 5px;
+        border-radius: 10px;
+        box-shadow: $box_shadow;
+        width: auto;
+    }
+}
+
+// éléments de la div prix et panier
+.price_div {
+    margin: auto;
+    color: $primary_color;
+    font-family: $main_font;
+}
+    
+
   
 // responsive
 // écrans moins de 360px
