@@ -67,7 +67,7 @@ const getTeddies = async function() {
     const select = document.createElement('select');
     formDiv.appendChild(select);
     select.setAttribute('name', "Choix de couleurs de " + teddy.name);
-    select.setAttribute('id', "Choix de couleurs de " + teddy.name);
+    select.setAttribute('id', "select_1 ");
 
     // ajout des différentes couleurs 
     const colors = teddy.colors;
@@ -88,17 +88,30 @@ const getTeddies = async function() {
     formDiv2.appendChild(label2);
     label2.textContent = "Nombre souhaité : ";
     label2.setAttribute('for', "Nombre souhaité");
- 
-    const input = document.createElement('input');
-    formDiv2.appendChild(input);
-    input.setAttribute('type', "number");
-    input.setAttribute('name', "number");
-    input.setAttribute('id', "number");
-    input.setAttribute('min', "1");
-    input.setAttribute('max', "10");
-    input.setAttribute('step', "1");
 
-}
+    const select2 = document.createElement('select');
+    formDiv2.appendChild(select2);
+    select2.setAttribute('name', "Nombre souhaité");
+    select2.setAttribute('id', "select_2");
+
+    for (i = 0; i <= 10; i++) {
+        const selectOption2 = document.createElement('option');
+        select2.appendChild(selectOption2);
+        selectOption2.textContent = i;
+        selectOption2.setAttribute("value", i);
+    }
+
+    // création bouton panier
+    let addTeddy = document.createElement('button');
+    form.appendChild(addTeddy);
+    addTeddy.type = 'submit';
+    addTeddy.name = 'add';
+    addTeddy.id = 'submit';
+    addTeddy.textContent = "Ajouter au panier"
+
+    // récupérations données des input
+
+};
 
 //appel de la fonction getTeddies
 getTeddies();

@@ -129,7 +129,7 @@ footer {
     display: flex;
     box-shadow: $box_shadow;
     background-color: $section_color;
-    margin: 30px auto 30px auto;
+    margin: 20px auto 10px auto;
     height: auto;
     width: 70%;
     img {
@@ -165,6 +165,7 @@ footer {
 // éléments formulaire
 form {
     margin: 10px;
+    font-weight: 500;
 }
 
 // choix couleur
@@ -174,9 +175,7 @@ form {
         color: $body_color;
     }
     select {
-        margin: 5px;
-        padding: 5px;
-        border-radius: 10px;
+        @include select;
         width: auto;
     }
 }
@@ -186,18 +185,47 @@ form {
     label {
         color: $body_color;
     }
-    input {
-        padding: 5px;
-        margin: 5px;
-        border-radius: 10px;
+    select {
+        @include select;
     }
 }
 
-// éléments de la div prix et panier
-.price_div {
-    margin: auto;
-    color: $primary_color;
-    font-family: $main_font;
+// bouton panier
+#submit {
+    @include select;
+    width: auto;
+    margin-top: 20px;
+    background-color: $body_color;
+    transform: scale(1);
+    transition: transform 300ms ease-in-out;
+    &:hover {
+        background-color: $primary_color;
+        transform: scale(1.1);
+    }
+}
+
+// bouton retour accueil
+.back{
+    button{
+        display: flex;
+        margin: auto auto 30px auto;
+        padding: 10px;
+        border-radius: 10px;
+        background-color: $section_color;
+        font-family: $main_font;
+        font-size: 1em;
+        font-weight: 500;
+        transform: scale(1);
+        transition: transform 300ms ease-in-out;
+        &:hover {
+            background-color: $hover_color_section;
+            transform: scale(1.1);
+        }
+        a {
+            text-decoration: none;
+            color: $body_color;
+        }
+    }
 }
     
 // responsive
@@ -243,7 +271,7 @@ form {
     .teddy_ref {
         @include flex_column;
         img {
-            margin: auto;
+            margin: 20px auto auto auto;
             width: 80%;
             height: 80%;
         }

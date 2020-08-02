@@ -58,6 +58,13 @@
     text-decoration: none;
 }
 
+@mixin select 
+{
+    padding: 5px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
 // Paramètres footer
 @mixin footer
 {
