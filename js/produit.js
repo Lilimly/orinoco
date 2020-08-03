@@ -101,6 +101,13 @@ const getTeddies = async function() {
         selectOption2.setAttribute("value", i);
     }
 
+    //stockage du nombre de teddy sélectionné dans localStorage
+    select2.addEventListener('change', function (event) {
+        const teddyValue = select2.value;
+        localStorage.setItem('teddyValue', teddyValue);
+        console.log(localStorage);
+    });
+    
     // création bouton panier
     let addTeddy = document.createElement('button');
     form.appendChild(addTeddy);
@@ -109,9 +116,13 @@ const getTeddies = async function() {
     addTeddy.id = 'submit';
     addTeddy.textContent = "Ajouter au panier"
 
-    // récupérations données des input
+    // récupérations données et envoie au panier
+    addTeddy.addEventListener("click", function (event) {
 
-};
+
+    
+});
+}
 
 //appel de la fonction getTeddies
 getTeddies();
