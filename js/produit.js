@@ -6,7 +6,7 @@ console.log(id);
 
 const getTeddies = async function() {
     //récupération des données de l'API 
-    let response = await fetch('http://localhost:3000/api/teddies/' + queryString)
+    let response = await fetch('http://localhost:3000/api/teddies/')
     let teddies = await response.json().catch(error => alert("Erreur : " + error));
     
     // récupération des données du teddy de la page
@@ -112,27 +112,34 @@ const getTeddies = async function() {
     // récupérations données et envoie au panier
     addTeddy.addEventListener("click", function (event) {
         event.preventDefault();
-        // récupération du nombre de teddy souhaité dans localStorage
-        const teddyValue = select2.value;
-        localStorage.setItem('teddyValue', teddyValue);
-        console.log(localStorage);
 
-        // récapitulatif du choix
+    // stockage des données du/des teddy souhaité dans localStorage
+        let newArticle = [];
         let teddiesChoosen = {
-            firstName: teddy.name,
-            theId: teddy._id,
-            value: teddyValue,
-            price: teddy.price / 100,
-        }
-        console.log(teddiesChoosen);
+            teddyName: teddy.name,
+            teddyId: teddy._id,
+            teddyColor: select.value,
+            teddyValue: select2.value,
+            teddyPrice: teddy.price / 100,
+        };
+
+        newArticle.push(teddiesChoosen);
+        localStorage.setItem('newArticle', JSON.stringify(newArticle));
+
+        const storedTeddies = JSON.parse(localStorage.getItem('newArticle'));
+        console.log(storedTeddies);
+
+        console.log(localStorage)
 
         //création d'alertes en fonction du nombre d'ourson choisi et envoie vers panier
+        const teddyValue = select2.value;
+        const teddyColor = select.value;
         if(teddyValue == 1){
-            if (window.confirm(teddy.name + ' a bien été ajouté. Souhaitez vous consulter votre panier ?')) { 
+            if (window.confirm(teddy.name + " " + teddyColor + ' a bien été ajouté. Souhaitez vous consulter votre panier ?')) { 
                 window.open("panier.html");
             }
         } else if(teddyValue > 1){
-            if (window.confirm(teddyValue + " " +teddy.name + ' ont bien été ajoutés. Souhaitez vous consulter votre panier ?')) { 
+            if (window.confirm(teddyValue + " " + teddy.name + " " + teddyColor + ' ont bien été ajoutés. Souhaitez vous consulter votre panier ?')) { 
                 window.open("panier.html");
             }
         } else {
@@ -150,4 +157,15 @@ getTeddies();
         const teddyValue = select2.value;
         localStorage.setItem('teddyValue', teddyValue);
         console.log(localStorage);
-    });*/
+    });
+    */
+
+           // récupération du nombre de teddy souhaité dans localStorage
+
+        /*const teddyColor = select.value;
+        localStorage.setItem('teddyColor', teddyColor);
+
+        const teddyValue = select2.value;
+        localStorage.setItem('teddyValue', teddyValue);
+
+        console.log(localStorage);*/
