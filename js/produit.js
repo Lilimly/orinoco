@@ -126,7 +126,18 @@ const getTeddies = async function() {
         }
         console.log(teddiesChoosen);
 
-        alert(teddy.name + ' a bien été ajouté au panier !');
+        //création d'alertes en fonction du nombre d'ourson choisi et envoie vers panier
+        if(teddyValue == 1){
+            if (window.confirm(teddy.name + ' a bien été ajouté. Souhaitez vous consulter votre panier ?')) { 
+                window.open("panier.html");
+            }
+        } else if(teddyValue > 1){
+            if (window.confirm(teddyValue + " " +teddy.name + ' ont bien été ajoutés. Souhaitez vous consulter votre panier ?')) { 
+                window.open("panier.html");
+            }
+        } else {
+            alert("Veuillez selectionner un nombre d'ourson souhaité");
+        }
     });
 }
 
