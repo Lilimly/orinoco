@@ -126,7 +126,8 @@ const getTeddies = async function() {
         newArticle.push(teddiesChoosen);
         localStorage.setItem('newArticle', JSON.stringify(newArticle));
 
-        const storedTeddies = JSON.parse(localStorage.getItem('newArticle'));
+        const storedTeddies = JSON.parse(localStorage.getItem('newArticle')); 
+        console.log(storedTeddies);
 
         //création d'alertes en fonction du nombre d'ourson choisi et envoie vers panier
         const teddyValue = select2.value;
