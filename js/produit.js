@@ -86,7 +86,7 @@ const getTeddies = async function() {
 
     const label2 = document.createElement('label');
     formDiv2.appendChild(label2);
-    label2.textContent = "Nombre souhaité : ";
+    label2.textContent = "Nombre ajouté au panier : ";
     label2.setAttribute('for', "Nombre souhaité");
 
     const select2 = document.createElement('select');
@@ -94,7 +94,7 @@ const getTeddies = async function() {
     select2.setAttribute('name', "Nombre souhaité");
     select2.setAttribute('id', "select_2");
 
-    for (i = 0; i <= 10; i++) {
+    for (i = 0; i <= 1; i++) {
         const selectOption2 = document.createElement('option');
         select2.appendChild(selectOption2);
         selectOption2.textContent = i;
@@ -114,7 +114,6 @@ const getTeddies = async function() {
         event.preventDefault();
 
     // stockage des données du/des teddy souhaité dans localStorage
-        let newArticle = [];
         let teddiesChoosen = {
             teddyName: teddy.name,
             teddyId: teddy._id,
@@ -123,21 +122,30 @@ const getTeddies = async function() {
             teddyPrice: teddy.price / 100,
         };
 
-        newArticle.push(teddiesChoosen);
-        localStorage.setItem('newArticle', JSON.stringify(newArticle));
+        let storedTeddies = JSON.parse(localStorage.getItem('newArticle'));
+        if(storedTeddies) {
+            storedTeddies.push(teddiesChoosen);
+            localStorage.setItem('newArticle', JSON.stringify(storedTeddies));
+            console.log(storedTeddies);
+        } else {
+            storedTeddies = [];
+            storedTeddies.push(teddiesChoosen);
+            localStorage.setItem('newArticle', JSON.stringify(storedTeddies));
+            console.log(storedTeddies);
+        }
+            
+            /* newArticle = [];
+            newArticle.push(teddiesChoosen);
+            localStorage.setItem('newArticle', JSON.stringify(newArticle));
 
-        const storedTeddies = JSON.parse(localStorage.getItem('newArticle')); 
-        console.log(storedTeddies);
+            let storedTeddies = JSON.parse(localStorage.getItem('newArticle')); 
+            console.log(storedTeddies);*/
 
         //création d'alertes en fonction du nombre d'ourson choisi et envoie vers panier
         const teddyValue = select2.value;
         const teddyColor = select.value;
         if(teddyValue == 1){
             if (window.confirm(teddy.name + " " + teddyColor + ' a bien été ajouté. Souhaitez vous consulter votre panier ?')) { 
-                window.open("panier.html");
-            }
-        } else if(teddyValue > 1){
-            if (window.confirm(teddyValue + " " + teddy.name + " " + teddyColor + ' ont bien été ajoutés. Souhaitez vous consulter votre panier ?')) { 
                 window.open("panier.html");
             }
         } else {
@@ -148,22 +156,3 @@ const getTeddies = async function() {
 
 //appel de la fonction getTeddies
 getTeddies();
-
-    //récupération du nombre de teddy souhaité dans localStorage
-    /*select2.addEventListener('change', function (event) {
-        event.preventDefault();
-        const teddyValue = select2.value;
-        localStorage.setItem('teddyValue', teddyValue);
-        console.log(localStorage);
-    });
-    */
-
-           // récupération du nombre de teddy souhaité dans localStorage
-
-        /*const teddyColor = select.value;
-        localStorage.setItem('teddyColor', teddyColor);
-
-        const teddyValue = select2.value;
-        localStorage.setItem('teddyValue', teddyValue);
-
-        console.log(localStorage);*/
