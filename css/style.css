@@ -184,6 +184,39 @@ footer a:hover {
   color: #ffffff;
 }
 
+.teddy_ref .teddy_cart {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  padding-bottom: 20px;
+}
+
+.teddy_ref .teddy_cart h3 {
+  font-family: "Montserrat", sans-serif;
+  color: #ffffff;
+  margin: 20px auto 20px auto;
+}
+
+.teddy_ref .teddy_cart .each_teddy {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: auto;
+  border: 1px solid #f3e9f1;
+}
+
+.teddy_ref .teddy_cart .each_teddy p {
+  font-family: "Montserrat", sans-serif;
+  margin-left: 15px;
+  padding: 5px;
+  color: #f3e9f1;
+}
+
+.teddy_ref .teddy_cart .each_teddy .teddy_price {
+  font-weight: 500;
+}
+
 form {
   margin: 10px;
   font-weight: 500;
@@ -298,6 +331,7 @@ form {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    width: 90%;
   }
   .teddy_ref img {
     margin: 20px auto auto auto;
@@ -306,6 +340,23 @@ form {
   }
   .teddy_ref .teddy_info {
     width: 80%;
+  }
+  .teddy_ref .teddy_cart {
+    padding-bottom: 10px;
+  }
+  .teddy_ref .teddy_cart .each_teddy {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 90%;
+  }
+  .teddy_ref .teddy_cart .each_teddy p {
+    padding: 10px;
+    margin: auto;
+  }
+  .teddy_ref .teddy_cart .each_teddy .teddy_price {
+    font-weight: 500;
+    margin: auto;
   }
 }
 
@@ -350,6 +401,7 @@ form {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    width: 85%;
   }
   .teddy_ref img {
     margin: 30px auto auto auto;
@@ -358,6 +410,23 @@ form {
   }
   .teddy_ref .teddy_info {
     width: 80%;
+  }
+  .teddy_ref .teddy_cart {
+    padding-bottom: 10px;
+  }
+  .teddy_ref .teddy_cart .each_teddy {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 90%;
+  }
+  .teddy_ref .teddy_cart .each_teddy p {
+    padding: 10px;
+    margin: auto;
+  }
+  .teddy_ref .teddy_cart .each_teddy .teddy_price {
+    font-weight: 500;
+    margin: auto;
   }
 }
 

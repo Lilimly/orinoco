@@ -78,28 +78,6 @@ const getTeddies = async function() {
         selectOption.textContent = colors[i];
         selectOption.setAttribute("value", colors[i]);
     }
-
-    // ajout nombre de produit désiré
-    const formDiv2 = document.createElement('div');
-    form.appendChild(formDiv2);
-    formDiv2.className = 'number';
-
-    const label2 = document.createElement('label');
-    formDiv2.appendChild(label2);
-    label2.textContent = "Nombre ajouté au panier : ";
-    label2.setAttribute('for', "Nombre souhaité");
-
-    const select2 = document.createElement('select');
-    formDiv2.appendChild(select2);
-    select2.setAttribute('name', "Nombre souhaité");
-    select2.setAttribute('id', "select_2");
-
-    for (i = 0; i <= 1; i++) {
-        const selectOption2 = document.createElement('option');
-        select2.appendChild(selectOption2);
-        selectOption2.textContent = i;
-        selectOption2.setAttribute("value", i);
-    }
     
     // création bouton panier
     let addTeddy = document.createElement('button');
@@ -118,38 +96,27 @@ const getTeddies = async function() {
             teddyName: teddy.name,
             teddyId: teddy._id,
             teddyColor: select.value,
-            teddyValue: select2.value,
+            quantity: 1,
             teddyPrice: teddy.price / 100,
         };
 
         let storedTeddies = JSON.parse(localStorage.getItem('newArticle'));
+        const teddyColor = select.value;
         if(storedTeddies) {
             storedTeddies.push(teddiesChoosen);
             localStorage.setItem('newArticle', JSON.stringify(storedTeddies));
             console.log(storedTeddies);
+            if (window.confirm(teddy.name + " " + teddyColor + ' a bien été ajouté. Souhaitez vous consulter votre panier ?')) { 
+                window.open("panier.html");
+            }
         } else {
             storedTeddies = [];
             storedTeddies.push(teddiesChoosen);
             localStorage.setItem('newArticle', JSON.stringify(storedTeddies));
             console.log(storedTeddies);
-        }
-            
-            /* newArticle = [];
-            newArticle.push(teddiesChoosen);
-            localStorage.setItem('newArticle', JSON.stringify(newArticle));
-
-            let storedTeddies = JSON.parse(localStorage.getItem('newArticle')); 
-            console.log(storedTeddies);*/
-
-        //création d'alertes en fonction du nombre d'ourson choisi et envoie vers panier
-        const teddyValue = select2.value;
-        const teddyColor = select.value;
-        if(teddyValue == 1){
             if (window.confirm(teddy.name + " " + teddyColor + ' a bien été ajouté. Souhaitez vous consulter votre panier ?')) { 
                 window.open("panier.html");
             }
-        } else {
-            alert("Veuillez selectionner un nombre d'ourson souhaité");
         }
     });
 }
