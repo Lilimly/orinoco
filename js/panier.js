@@ -32,7 +32,7 @@ for (storedTeddy of storedTeddies) {
 
     const teddiesCart = document.createElement('p');
     eachTeddy.appendChild(teddiesCart);
-    teddiesCart.textContent = storedTeddy.quantity + " " + storedTeddy.teddyName + ", " + storedTeddy.teddyColor;
+    teddiesCart.textContent = storedTeddy.quantity + " " + storedTeddy.teddyName + " , " + storedTeddy.teddyColor;
 
     const teddyPrice = document.createElement('div');
     eachTeddy.appendChild(teddyPrice);

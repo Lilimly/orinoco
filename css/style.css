@@ -255,22 +255,10 @@ form {
   width: auto;
 }
 
-.number label {
-  color: #ffffff;
-}
-
-.number select {
-  padding: 5px;
-  margin: 10px;
-  border-radius: 10px;
-}
-
 #submit {
-  padding: 5px;
-  margin: 10px;
-  border-radius: 10px;
   width: auto;
-  margin: 20px auto 20px auto;
+  border-radius: 10px;
+  margin: 20px auto 30px auto;
   background-color: #ffffff;
   padding: 8px;
   transform: scale(1);
@@ -351,11 +339,9 @@ form {
 }
 
 .contact_form .div_name #valid {
-  padding: 5px;
-  margin: 10px;
-  border-radius: 10px;
   width: auto;
-  margin: 20px auto 20px auto;
+  border-radius: 10px;
+  margin: 20px auto 30px auto;
   background-color: #ffffff;
   padding: 8px;
   transform: scale(1);
