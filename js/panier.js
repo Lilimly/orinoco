@@ -148,12 +148,12 @@ inputMail.setAttribute('class', 'name');
 // création bouton validation
 const divSubmit = document.createElement('div');
 form.appendChild(divSubmit);
-divSubmit.id = 'div_submit';
+divSubmit.className = 'div_name';
 
 let submit = document.createElement('button');
 divSubmit.appendChild(submit);
 submit.type = 'submit';
 submit.name = 'add';
-submit.id = 'submit';
+submit.id = 'valid';
 submit.textContent = "Valider votre commande";
 

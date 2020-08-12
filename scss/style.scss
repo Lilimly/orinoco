@@ -23,7 +23,7 @@ header {
         padding-left: 30px;
         margin: auto;
     }
-    .lien_panier{
+    .lien_panier {
         text-decoration: none;
         color: $main_color;
         font-family: $main_font;
@@ -35,8 +35,7 @@ header {
         &:hover {
             opacity: 1;
             transform: scale(1);
-    }
-
+        }
     }
 }
 
@@ -44,7 +43,7 @@ header {
 // main
 main {
     @include main;
-    h1{
+    h1 {
         font-family: $main_font;
         font-size: 2em;
         color: $section_color;
@@ -52,7 +51,7 @@ main {
         margin: auto;
         padding-top: 20px;
     }
-    h2{
+    h2 {
         font-family: $main_font;
         color: $main_color;
         text-align: center;
@@ -66,30 +65,30 @@ main {
 
 // section
 section {
-    a{
-    @include section;
-    @include flex_center;
-    img{
-        margin: auto;
-        width: 250px;
-        height: auto;
-        border-radius: 20%;
-        box-shadow: $box_shadow;
-    }
-    .teddies_ref{
-        margin: auto;
-        h3{
-            color: $body_color;
-            padding-left: 10px;
-            padding-right: 20px;
-            
+    a {
+        @include section;
+        @include flex_center;
+        img {
+            margin: auto;
+            width: 250px;
+            height: auto;
+            border-radius: 20%;
+            box-shadow: $box_shadow;
         }
-        p{
-            color: $primary_color;
-            font-style: italic;
+        .teddies_ref{
+            margin: auto;
+            h3{
+                color: $body_color;
+                padding-left: 10px;
+                padding-right: 20px;
+                
+            }
+            p {
+                color: $primary_color;
+                font-style: italic;
+            }
         }
-    }
-}   
+    }   
 }
 
 //animation a class "zoom"
@@ -189,12 +188,13 @@ footer {
             justify-content: space-between;
             width: 80%;
             margin: auto;
-            border: 1px solid $primary_color;
+            background-color: $primary_color;
+            border: 1px solid $section_color;
             p{
                 font-family: $main_font;
                 margin-left: 15px;
                 padding: 5px;
-                color: $primary_color;  
+                color: $section_color;  
             }
             .teddy_price{
                 font-weight: 500;
@@ -231,18 +231,10 @@ form {
     }
 }
 
-// bouton panier
+// bouton envoie au panier
 #submit {
     @include select;
-    width: auto;
-    margin-top: 20px;
-    background-color: $body_color;
-    transform: scale(1);
-    transition: transform 300ms ease-in-out;
-    &:hover {
-        background-color: $primary_color;
-        transform: scale(1.1);
-    }
+    @include submit;
 }
 
 // bouton retour accueil
@@ -278,7 +270,7 @@ form {
     margin: 20px auto 20px auto;
 }
 
-.empty_cart{
+.empty_cart {
     font-family: $main_font;
     color: $body_color;
     font-weight: 500;
@@ -289,30 +281,30 @@ form {
 }
 
 // formulaire de contact
-.contact_form{
+.contact_form {
     border: 4px solid $primary_color;
-    h3{
+    h3 {
             text-align: center;
             padding: 5px;
             font-weight: 400;
             color: $section_color;
     }
-    .div_name{
+
+    .div_name {
+        @include flex_column;
         color: $body_color;
         font-family: $main_font;
         padding: 10px;
         .name {
             @include select;
+            width: 50%;
+        }
+        #valid {
+            @include select;
+            @include submit;
         }
     }
-    #div_submit{
-        margin: auto;
-        button {
-            #submit{
-                margin: auto;
-            }
-        }
-    }
+
 }
  
 // responsive

@@ -65,6 +65,21 @@
     border-radius: 10px;
 }
 
+// paramètre bouton validation
+@mixin submit 
+{
+    width: auto;
+    margin: 20px auto 20px auto;
+    background-color: $body_color;
+    padding: 8px;
+    transform: scale(1);
+    transition: transform 300ms ease-in-out;
+    &:hover {
+        background-color: $primary_color;
+        transform: scale(1.1);
+    }
+}
+
 // Paramètres footer
 @mixin footer
 {
