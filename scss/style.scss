@@ -13,14 +13,30 @@ header {
     @include header;
     .header{
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         margin: auto;
         padding: 5px;
     }
     a img{
         max-width: max-content;
         display: inline-block;
-        padding-left: 20px;
+        padding-left: 30px;
+        margin: auto;
+    }
+    .lien_panier{
+        text-decoration: none;
+        color: $main_color;
+        font-family: $main_font;
+        margin: auto 30px auto 5px;
+        text-align: right;
+        opacity: 0.9;
+        transform: scale(0.9);
+        transition: transform 300ms ease-in-out;
+        &:hover {
+            opacity: 1;
+            transform: scale(1);
+    }
+
     }
 }
 
@@ -252,11 +268,45 @@ form {
         }
     }
 }
+
+// page panier
+.total{
+    font-family: $main_font;
+    color: $body_color;
+    font-weight: 500;
+    font-size: larger;
+    margin: 20px auto 20px auto;
+}
+
+// formulaire de contact
+form{
+    h3{
+        text-align: center;
+        padding: 5px;
+        font-weight: 400;
+    }
+}
     
 // responsive
 // écrans moins de 360px
 @media #{$x_small_screen}
 {
+    header{
+        a img{
+            width: 90%;
+            height: 90%;
+            padding-left: 10px;
+        }
+        .lien_panier{
+            text-decoration: none;
+            color: $main_color;
+            font-family: $main_font;
+            margin: auto 10px auto 5px;
+            text-align: right;
+            font-size: 0.8em;
+        }
+    }
+
     main {
         @include flex_column;
         h1 {
@@ -325,6 +375,22 @@ form {
 // écrans plus de 360px et moins de 760 px 
 @media #{$small_screen}
 {
+    header{
+        a img{
+            width: 90%;
+            height: 90%;
+            padding-left: 15px;
+        }
+        .lien_panier{
+            text-decoration: none;
+            color: $main_color;
+            font-family: $main_font;
+            margin: auto 15px auto 5px;
+            text-align: right;
+            font-size: 1em;
+        }
+    }
+
     main {
         @include flex_column;
         h2 {
