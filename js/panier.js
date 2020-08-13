@@ -1,5 +1,5 @@
 //récupération données localStorage
-let storedTeddies = JSON.parse(localStorage.getItem('newArticle'))
+let storedTeddies = JSON.parse(localStorage.getItem('newArticle'));
 console.log(storedTeddies);
 
 // création de la page du récapitulatif panier
@@ -17,7 +17,7 @@ teddyDivCart.appendChild(teddyH3);
 teddyH3.textContent = "Vos oursons :";
 
 // si le panier est vide 
-if(storedTeddies === null){
+if(storedTeddies == null){
     const emptyCart = document.createElement('p');
     teddyDivCart.appendChild(emptyCart);
     emptyCart.className = "empty_cart";
@@ -61,6 +61,29 @@ teddyDivCart.appendChild(total);
 total.className = 'total';
 total.textContent = "Montant total = " + totalPrice + " €";
 
+//création bouton supression objet du panier
+const garbage = document.createElement('button');
+teddyDivCart.appendChild(garbage);
+garbage.className = 'icon_garbage';
+
+const cartLink = document.createElement('a');
+garbage.appendChild(cartLink);
+cartLink.href = "panier.html";
+cartLink.id = "cart_link"
+cartLink.title = 'Vider le panier';
+cartLink.textContent = "Vider mon panier ";
+
+const icon = document.createElement('i');
+cartLink.appendChild(icon);
+icon.className = 'fas fa-trash-alt'
+
+garbage.addEventListener("click", function (event) {
+    event.preventDefault();
+        alert('Votre panier a bien été vidé !')
+        localStorage.removeItem('newArticle');
+        window.location.href = "panier.html";
+});
+
 //création du formulaire de commande
 const form = document.createElement('form');
 form.className = 'contact_form';
@@ -80,10 +103,12 @@ divFirstName.appendChild(labelFirstName);
 labelFirstName.setAttribute('for', 'prénom');
 labelFirstName.textContent = 'Votre prénom : ';
 
-const inputFirstName = document.createElement('input');
-divFirstName.appendChild(inputFirstName);
-inputFirstName.setAttribute('type', 'text');
-inputFirstName.setAttribute('class', 'name');
+const firstName = document.createElement('input');
+divFirstName.appendChild(firstName);
+firstName.setAttribute('type', 'text');
+firstName.setAttribute('class', 'name');
+firstName.required = true;
+
 
 // ajout formulaire "nom"
 const divLastName = document.createElement('div');
@@ -95,10 +120,11 @@ divLastName.appendChild(labelLastName);
 labelLastName.setAttribute('for', 'nom');
 labelLastName.textContent = 'Votre nom : ';
 
-const inputLastName = document.createElement('input');
-divLastName.appendChild(inputLastName);
-inputLastName.setAttribute('type', 'text');
-inputLastName.setAttribute('class', 'name');
+const lastName = document.createElement('input');
+divLastName.appendChild(lastName);
+lastName.setAttribute('type', 'text');
+lastName.setAttribute('class', 'name');
+lastName.required = true;
 
 // ajout formulaire "adresse"
 const divAddress = document.createElement('div');
@@ -110,10 +136,11 @@ divAddress.appendChild(labelAdress);
 labelAdress.setAttribute('for', 'adresse');
 labelAdress.textContent = 'Votre adresse : ';
 
-const textAreaAddress = document.createElement('textarea');
-divAddress.appendChild(textAreaAddress);
-textAreaAddress.setAttribute('type', 'text');
-textAreaAddress.setAttribute('class', 'name');
+const address = document.createElement('textarea');
+divAddress.appendChild(address);
+address.setAttribute('type', 'text');
+address.setAttribute('class', 'name');
+address.required = true;
 
 // ajout formulaire "ville"
 const divCity = document.createElement('div');
@@ -125,10 +152,11 @@ divCity.appendChild(labelCity);
 labelCity.setAttribute('for', 'ville');
 labelCity.textContent = 'Votre ville : ';
 
-const inputCity = document.createElement('input');
-divCity.appendChild(inputCity);
-inputCity.setAttribute('type', 'text');
-inputCity.setAttribute('class', 'name');
+const city = document.createElement('input');
+divCity.appendChild(city);
+city.setAttribute('type', 'text');
+city.setAttribute('class', 'name');
+city.required = true;
 
 // ajout formulaire "mail"
 const divMail = document.createElement('div');
@@ -140,10 +168,11 @@ divMail.appendChild(labelMail);
 labelMail.setAttribute('for', 'email');
 labelMail.textContent = 'Votre adresse mail : ';
 
-const inputMail = document.createElement('input');
-divMail.appendChild(inputMail);
-inputMail.setAttribute('type', 'email');
-inputMail.setAttribute('class', 'name');
+const mail = document.createElement('input');
+divMail.appendChild(mail);
+mail.setAttribute('type', 'email');
+mail.setAttribute('class', 'name');
+mail.required = true;
 
 // création bouton validation
 const divSubmit = document.createElement('div');

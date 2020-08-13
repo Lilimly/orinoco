@@ -73,12 +73,17 @@
     border-radius: 10px;
     margin: 20px auto 30px auto;
     background-color: $body_color;
+    font-family: $main_font;
+    color: $section_color;
+    font-weight: 500;
+    font-size: 0.8em;
     padding: 8px;
     transform: scale(1);
     transition: transform 300ms ease-in-out;
     &:hover {
         background-color: $primary_color;
         transform: scale(1.1);
+        color: $hover_color_link;
     }
 }
 

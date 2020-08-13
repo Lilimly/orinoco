@@ -229,10 +229,46 @@ footer a:hover {
   margin-left: 15px;
   padding: 5px;
   color: tomato;
+  font-weight: 500;
 }
 
 .teddy_ref .teddy_cart .each_teddy .teddy_price {
+  display: flex;
   font-weight: 500;
+}
+
+.teddy_ref .teddy_cart .icon_garbage {
+  width: auto;
+  border-radius: 10px;
+  margin: 20px auto 30px auto;
+  background-color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  color: tomato;
+  font-weight: 500;
+  font-size: 0.8em;
+  padding: 8px;
+  transform: scale(1);
+  transition: transform 300ms ease-in-out;
+}
+
+.teddy_ref .teddy_cart .icon_garbage:hover {
+  background-color: #f3e9f1;
+  transform: scale(1.1);
+  color: #ac1d04;
+}
+
+.teddy_ref .teddy_cart .icon_garbage #cart_link {
+  text-decoration: none;
+  color: tomato;
+}
+
+.teddy_ref .teddy_cart .icon_garbage #cart_link:hover {
+  color: #ac1d04;
+}
+
+.teddy_ref .teddy_cart .icon_garbage .fas {
+  font-size: 1.5em;
+  padding: 5px;
 }
 
 form {
@@ -260,6 +296,10 @@ form {
   border-radius: 10px;
   margin: 20px auto 30px auto;
   background-color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  color: tomato;
+  font-weight: 500;
+  font-size: 0.8em;
   padding: 8px;
   transform: scale(1);
   transition: transform 300ms ease-in-out;
@@ -268,6 +308,7 @@ form {
 #submit:hover {
   background-color: #f3e9f1;
   transform: scale(1.1);
+  color: #ac1d04;
 }
 
 .back button {
@@ -343,6 +384,10 @@ form {
   border-radius: 10px;
   margin: 20px auto 30px auto;
   background-color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  color: tomato;
+  font-weight: 500;
+  font-size: 0.8em;
   padding: 8px;
   transform: scale(1);
   transition: transform 300ms ease-in-out;
@@ -351,6 +396,7 @@ form {
 .contact_form .div_name #valid:hover {
   background-color: #f3e9f1;
   transform: scale(1.1);
+  color: #ac1d04;
 }
 
 @media only screen and (max-width: 360px) {

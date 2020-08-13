@@ -174,6 +174,7 @@ footer {
             color: $body_color;
         }
     }
+
     .teddy_cart {
         @include flex_column;
         width: 100%;
@@ -194,14 +195,29 @@ footer {
                 margin-left: 15px;
                 padding: 5px;
                 color: $section_color;  
+                font-weight: 500;
             }
             .teddy_price {
+                display: flex;
                 font-weight: 500;
             }
         }   
+        .icon_garbage {
+            @include submit;
+            #cart_link{
+                text-decoration: none;
+                color: $section_color; 
+                &:hover {
+                    color: $hover_color_link;
+                }
+            }
+            .fas{
+                font-size: 1.5em; 
+                padding: 5px;
+            }
+        }
     }
 }
-
 // éléments formulaire page produit
 form {
     margin: 10px;
