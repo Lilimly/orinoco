@@ -169,6 +169,37 @@ footer a:hover {
   width: 70%;
 }
 
+.teddy_ref h3 {
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+}
+
+.teddy_ref p {
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  margin: 15px;
+}
+
+.teddy_ref .confirm {
+  margin: 30px auto 30px auto;
+  width: 80%;
+  background-color: #ffffff;
+  box-shadow: 0 0 20px #bababa;
+}
+
+.teddy_ref .confirm h3 {
+  color: tomato;
+}
+
+.teddy_ref .confirm .confirm_par {
+  font-weight: 500;
+  text-align: left;
+  margin-left: 30px;
+  color: tomato;
+}
+
 .teddy_ref img {
   width: 50%;
   height: 50%;
@@ -399,6 +430,49 @@ form {
   color: #ac1d04;
 }
 
+.teddy_confirm {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+  box-shadow: 0 0 20px #bababa;
+  background-color: tomato;
+  margin: 20px auto 10px auto;
+  height: auto;
+  width: 70%;
+}
+
+.teddy_confirm h3 {
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+}
+
+.teddy_confirm p {
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  margin: 15px;
+}
+
+.teddy_confirm .confirm {
+  margin: 30px auto 30px auto;
+  width: 80%;
+  background-color: #ffffff;
+  box-shadow: 0 0 20px #bababa;
+}
+
+.teddy_confirm .confirm h3 {
+  color: tomato;
+}
+
+.teddy_confirm .confirm .confirm_par {
+  font-weight: 500;
+  text-align: left;
+  margin-left: 30px;
+  color: tomato;
+}
+
 @media only screen and (max-width: 360px) {
   header a img {
     width: 90%;
@@ -484,6 +558,13 @@ form {
     font-weight: 500;
     margin: auto;
   }
+  .teddy_confirm {
+    width: 90%;
+  }
+  .teddy_confirm .confirm {
+    margin: 30px auto 30px auto;
+    width: 90%;
+  }
 }
 
 @media only screen and (max-width: 760px) and (min-width: 360px) {
@@ -566,6 +647,13 @@ form {
   .teddy_ref .teddy_cart .each_teddy .teddy_price {
     font-weight: 500;
     margin: auto;
+  }
+  .teddy_confirm {
+    width: 90%;
+  }
+  .teddy_confirm .confirm {
+    margin: 30px auto 30px auto;
+    width: 90%;
   }
 }
 

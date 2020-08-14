@@ -147,6 +147,32 @@ footer {
     margin: 20px auto 10px auto;
     height: auto;
     width: 70%;
+    h3{
+        color: $body_color;
+        font-family: $main_font;
+        text-align: center;
+    }
+    p{
+        color: $body_color;  
+        font-family: $main_font;
+        text-align: center;
+        margin: 15px;
+    }
+    .confirm{
+        margin: 30px auto 30px auto;
+        width: 80%;
+        background-color: $body_color;
+        box-shadow: $box_shadow;
+        h3{
+            color: $section_color;
+        }
+        .confirm_par{
+            font-weight: 500;
+            text-align: left;
+            margin-left: 30px;
+            color: $section_color;
+        }
+    }
     img {
         width: 50%;
         height: 50%;
@@ -310,7 +336,43 @@ form {
     }
 
 }
- 
+
+// page confirmation
+.teddy_confirm {
+    @include flex_column;
+    display: flex;
+    box-shadow: $box_shadow;
+    background-color: $section_color;
+    margin: 20px auto 10px auto;
+    height: auto;
+    width: 70%;
+    h3{
+        color: $body_color;
+        font-family: $main_font;
+        text-align: center;
+    }
+    p{
+        color: $body_color;  
+        font-family: $main_font;
+        text-align: center;
+        margin: 15px;
+    }
+    .confirm{
+        margin: 30px auto 30px auto;
+        width: 80%;
+        background-color: $body_color;
+        box-shadow: $box_shadow;
+        h3{
+            color: $section_color;
+        }
+        .confirm_par{
+            font-weight: 500;
+            text-align: left;
+            margin-left: 30px;
+            color: $section_color;
+        }
+    }
+}
 // responsive
 // écrans moins de 360px
 @media #{$x_small_screen}
@@ -394,6 +456,13 @@ form {
             }
         }
     }
+    .teddy_confirm{
+        width: 90%;
+        .confirm{
+            margin: 30px auto 30px auto;
+            width: 90%;
+        }
+    }
 }
 
 // écrans plus de 360px et moins de 760 px 
@@ -446,6 +515,7 @@ form {
             width: 80%;
         }
     }
+
     .teddy_ref {
         @include flex_column;
         width: 85%;
@@ -471,6 +541,14 @@ form {
                     margin: auto;
                 }
             }
+        }
+    }
+
+    .teddy_confirm{
+        width: 90%;
+        .confirm{
+            margin: 30px auto 30px auto;
+            width: 90%;
         }
     }
 }
