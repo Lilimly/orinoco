@@ -1,4 +1,11 @@
 # Orinoco #
+Bienvenue sur Orinoco !
+Pour pouvoir utiliser correctement l'API, veuillez suivre ces instructions :
+
+Telechargez et ouvrez Node.js et placez vous sur le dossier d'installation du back-end.
+Tapez la commande suivante : "npm start" (le serveur se lancera).
+Allez à cette adresse : https://lilimly.github.io/orinoco/.
+
 
 This is the back end server for Project 5 of the Junior Web Developer path.
 
