@@ -286,17 +286,25 @@ submit.addEventListener("click", function (event) {
         console.log(send);
 
         // envoie des données au serveur
-        const options = {
-            method: 'POST',
-            body: JSON.stringify(send),
-            headers: {
-                'Content-Type': 'application/json'
+        const post = async function (data){
+            let response = await fetch('http://localhost:3000/api/teddies/order', {
+                method: 'POST',
+                body: JSON.stringify(data),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+            if(response.ok){
+                let data = await response.json();
+                console.log(data.orderId);
+                localStorage.setItem("responseOrder", data.orderId);
+                window.location = "confirmation.html";
+                localStorage.removeItem("newArticle");
+
+            } else {
+                event.preventDefault();
             }
-        }
-         
-        fetch('http://localhost:3000/api/teddies', options)
-            .then(res => res.json())
-            .then(res => console.log(res));
+        };
+        post(send);
     } 
 });
-

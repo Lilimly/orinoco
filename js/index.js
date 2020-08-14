@@ -1,4 +1,4 @@
-const getTeddies = async function() {
+const getTeddies =  async function() {
     //récupération des données de l'API 
     let response = await fetch('http://localhost:3000/api/teddies/')
     let teddies = await response.json().catch(error => alert("Erreur : " + error));
