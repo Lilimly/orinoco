@@ -61,7 +61,7 @@ teddyDivCart.appendChild(total);
 total.className = 'total';
 total.textContent = "Montant total = " + totalPrice + " €";
 
-//création bouton supression objet du panier
+//création d'un bouton pour vider le panier
 const garbage = document.createElement('button');
 teddyDivCart.appendChild(garbage);
 garbage.className = 'icon_garbage';
@@ -93,6 +93,20 @@ const teddyH3Bis = document.createElement('h3');
 form.appendChild(teddyH3Bis);
 teddyH3Bis.textContent = "Pour valider votre commande, merci de remplir ce formulaire : ";
 
+// création fonctions de validité prénom, nom, ville
+function isValid(value) {
+    return /^[A-Z-a-z\s]{3,40}$/.test(value);
+}
+
+// création fonctions de validité adresse
+function validAddress(value) {
+    return /^[A-Z-a-z-0-9\s]{10,80}$/.test(value)
+}
+
+// création fonctions de validité mail
+function validMail(value){
+    return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(value)
+}
 // ajout formulaire "prénom"
 const divFirstName = document.createElement('div');
 form.appendChild(divFirstName);
@@ -107,8 +121,17 @@ const firstName = document.createElement('input');
 divFirstName.appendChild(firstName);
 firstName.setAttribute('type', 'text');
 firstName.setAttribute('class', 'name');
+firstName.name = "Prénom"
 firstName.required = true;
 
+// Vérification de la validité du prénom
+firstName.addEventListener("change", function (event) {
+    if (isValid(firstName.value)) {
+    } else {
+        alert( "Aucun chiffre ou symbole n'est autorisé.")
+        event.preventDefault()
+    }
+});
 
 // ajout formulaire "nom"
 const divLastName = document.createElement('div');
@@ -124,7 +147,17 @@ const lastName = document.createElement('input');
 divLastName.appendChild(lastName);
 lastName.setAttribute('type', 'text');
 lastName.setAttribute('class', 'name');
+lastName.name = "Nom"
 lastName.required = true;
+
+// Vérification de la validité du nom
+lastName.addEventListener("change", function (event) {
+    if (isValid(lastName.value)) {
+    } else {
+        alert("Aucun chiffre ou symbole n'est autorisé.")
+        event.preventDefault()
+    }
+});
 
 // ajout formulaire "adresse"
 const divAddress = document.createElement('div');
@@ -140,7 +173,17 @@ const address = document.createElement('textarea');
 divAddress.appendChild(address);
 address.setAttribute('type', 'text');
 address.setAttribute('class', 'name');
+address.name = "Adresse"
 address.required = true;
+
+// Vérification de la validité de l'adresse
+address.addEventListener("change", function (event) {
+    if (validAddress(address.value)){
+    } else {
+        event.preventDefault()
+        alert("Aucun symbole n'est autorisé.");
+    }
+});
 
 // ajout formulaire "ville"
 const divCity = document.createElement('div');
@@ -156,7 +199,17 @@ const city = document.createElement('input');
 divCity.appendChild(city);
 city.setAttribute('type', 'text');
 city.setAttribute('class', 'name');
+city.name = "Ville"
 city.required = true;
+
+// Vérification de la validité de la ville
+city.addEventListener("change", function (event) {
+    if (isValid(city.value)) {
+    } else {
+        alert("Aucun chiffre ou symbole n'est autorisé.")
+        event.preventDefault()
+    }
+});
 
 // ajout formulaire "mail"
 const divMail = document.createElement('div');
@@ -172,7 +225,17 @@ const mail = document.createElement('input');
 divMail.appendChild(mail);
 mail.setAttribute('type', 'email');
 mail.setAttribute('class', 'name');
+mail.name = "Adresse mail"
 mail.required = true;
+
+// Vérification de la validité du mail
+mail.addEventListener("change", function (event) {
+    if (validMail(mail.value)){
+    } else {
+        event.preventDefault()
+        alert("Veuillez saisir une adresse mail valide.");
+    }
+});
 
 // création bouton validation
 const divSubmit = document.createElement('div');
