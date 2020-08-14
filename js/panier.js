@@ -249,3 +249,54 @@ submit.name = 'add';
 submit.id = 'valid';
 submit.textContent = "Valider votre commande";
 
+// envoie des données panier + contact au serveur si le formulaire est valide
+submit.addEventListener("click", function (event) {
+    if(isValid(firstName.value) && isValid(lastName.value) && validAddress(address.value) && isValid(city.value) && validMail(mail.value)){
+        alert('Votre commande a bien été enregistrée !')
+        event.preventDefault();
+
+        // envoie du prix total au localStorage
+        localStorage.setItem('totalPrice', totalPrice);
+        const storagePrice = localStorage.getItem('totalPrice');
+        console.log(storagePrice);
+
+        //Création de l'objet "contact"
+        let contact = {
+            firstName: firstName.value,
+            lastName: lastName.value,
+            address: address.value,
+            city: city.value,
+            email: mail.value,
+        }
+        console.log(contact);
+
+        // création du tableau products (id des oursons du panier)
+        let products = [];
+        for (storedTeddy of storedTeddies) {
+            let productsId = storedTeddy.teddyId;
+            products.push((productsId));
+        }
+        console.log(products);
+
+        // création d'un objet regroupant contact et produits
+        let send = {
+            contact,
+            products,
+        }
+        console.log(send);
+
+        // envoie des données au serveur
+        const options = {
+            method: 'POST',
+            body: JSON.stringify(send),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }
+         
+        fetch('http://localhost:3000/api/teddies', options)
+            .then(res => res.json())
+            .then(res => console.log(res));
+    } 
+});
+
