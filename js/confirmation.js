@@ -50,3 +50,6 @@ const teddyPar6 = document.createElement('p');
 teddyDivConfirm.appendChild(teddyPar6);
 teddyPar6.textContent = "Montant total de votre commande : " + totalPrice + " €";
 teddyPar6.className = "confirm_par";
+
+// Efface localStorage
+localStorage.clear();
