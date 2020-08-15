@@ -2,11 +2,19 @@
 Bienvenue sur Orinoco !
 Pour pouvoir utiliser correctement l'API, veuillez suivre ces instructions :
 
-Telechargez et ouvrez Node.js et placez vous sur le dossier d'installation du back-end.
-Tapez la commande suivante : "npm start" (le serveur se lancera).
-Allez à cette adresse : https://lilimly.github.io/orinoco/.
+Clonez ce repository.
+Telechargez et ouvrez Node.js. 
+Tapez la commande suivante : "npm start".
+Puis lancez le serveur en tapant la commande : "node server".
+
+Le serveur doit fonctionner sur "localhost" avec le port par défaut "3000". 
+Si le serveur fonctionne sur un autre port, la console l'indiquera au démarrage du serveur, avec, par exemple : "Listening on port 3001".
+
+Pour finir, rendez vous à cette adresse : https://lilimly.github.io/orinoco/.
 
 
+
+# Orinoco #
 This is the back end server for Project 5 of the Junior Web Developer path.
 
 ### Prerequisites ###

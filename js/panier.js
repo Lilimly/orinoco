@@ -252,7 +252,6 @@ submit.textContent = "Valider votre commande";
 // envoie des données panier + contact au serveur si le formulaire est valide
 submit.addEventListener("click", function (event) {
     if(isValid(firstName.value) && isValid(lastName.value) && validAddress(address.value) && isValid(city.value) && validMail(mail.value)){
-        alert('Votre commande a bien été enregistrée !')
         event.preventDefault();
 
         // envoie du prix total au localStorage
