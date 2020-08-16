@@ -12,7 +12,7 @@ const getTeddies = async function() {
             let teddies = await response.json();
             console.log(teddies); 
 
-            // récupération des données du teddy de la page
+            // récupération des données du teddy de la page par son id
             const teddy = teddies.find(x => x['_id'] === id);
             console.log(teddy);
 
@@ -102,6 +102,7 @@ const getTeddies = async function() {
                     quantity: 1,
                     teddyPrice: teddy.price / 100,
                 };
+                console.log(teddiesChoosen);
 
                 let storedTeddies = JSON.parse(localStorage.getItem('newArticle'));
                 const teddyColor = select.value;
@@ -111,6 +112,8 @@ const getTeddies = async function() {
                     console.log(storedTeddies);
                     if (window.confirm(teddy.name + " " + teddyColor + ' a bien été ajouté. Souhaitez vous consulter votre panier ?')) { 
                         window.location.href = "panier.html";
+                    } else {
+                        window.location.href = "index.html";
                     }
                 } else {
                     storedTeddies = [];
@@ -119,6 +122,8 @@ const getTeddies = async function() {
                     console.log(storedTeddies);
                     if (window.confirm(teddy.name + " " + teddyColor + ' a bien été ajouté. Souhaitez vous consulter votre panier ?')) { 
                         window.location.href = "panier.html";
+                    } else {
+                        window.location.href = "index.html";
                     }
                 }
             })

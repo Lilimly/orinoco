@@ -100,7 +100,7 @@ function isValid(value) {
 
 // création fonctions de validité adresse
 function validAddress(value) {
-    return /^[A-Z-a-z-0-9\s]{10,80}$/.test(value)
+    return /^[A-Z-a-z-0-9\s]{5,80}$/.test(value)
 }
 
 // création fonctions de validité mail
