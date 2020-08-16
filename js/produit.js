@@ -6,119 +6,128 @@ console.log(id);
 
 const getTeddies = async function() {
     //récupération des données de l'API 
-    let response = await fetch('http://localhost:3000/api/teddies/')
-    let teddies = await response.json().catch(error => alert("Erreur : " + error));
-    
-    // récupération des données du teddy de la page
-    const teddy = teddies.find(x => x['_id'] === id);
-    console.log(teddy);
+    try {
+        let response = await fetch('http://localhost:3000/api/teddies/');
+        if (response.ok) {
+            let teddies = await response.json();
+            console.log(teddies); 
 
-    // création h2 de la page
-    const teddyMain = document.getElementById('product_page');
-    const teddyH2 = document.createElement('h2');
-    teddyMain.appendChild(teddyH2);
-    teddyH2.textContent = "Oribears vous présente " + teddy.name;
+            // récupération des données du teddy de la page
+            const teddy = teddies.find(x => x['_id'] === id);
+            console.log(teddy);
 
-    // création div de l'ourson
-    const teddyDiv = document.createElement('div');
-    teddyMain.appendChild(teddyDiv);
-    teddyDiv.className = 'teddy_ref';
+            // création h2 de la page
+            const teddyMain = document.getElementById('product_page');
+            const teddyH2 = document.createElement('h2');
+            teddyMain.appendChild(teddyH2);
+            teddyH2.textContent = "Oribears vous présente " + teddy.name;
 
-    //ajout image à la div ourson
-    const teddyImg = document.createElement('img');
-    teddyDiv.appendChild(teddyImg);
-    teddyImg.setAttribute('src', teddy.imageUrl);
-    teddyImg.setAttribute('alt', 'Ours en peluche ' + teddy.name);
-    teddyImg.setAttribute('title', 'Ours en peluche ' + teddy.name);
+            // création div de l'ourson
+            const teddyDiv = document.createElement('div');
+            teddyMain.appendChild(teddyDiv);
+            teddyDiv.className = 'teddy_ref';
 
-    //création div de présentation
-    const teddyDivInfo = document.createElement('div');
-    teddyDiv.appendChild(teddyDivInfo);
-    teddyDivInfo.className = 'teddy_info';
+            //ajout image à la div ourson
+            const teddyImg = document.createElement('img');
+            teddyDiv.appendChild(teddyImg);
+            teddyImg.setAttribute('src', teddy.imageUrl);
+            teddyImg.setAttribute('alt', 'Ours en peluche ' + teddy.name);
+            teddyImg.setAttribute('title', 'Ours en peluche ' + teddy.name);
 
-    // ajout nom teddy
-    const teddyH3 = document.createElement('h3');
-    teddyDivInfo.appendChild(teddyH3);
-    teddyH3.textContent = teddy.name;
+            //création div de présentation
+            const teddyDivInfo = document.createElement('div');
+            teddyDiv.appendChild(teddyDivInfo);
+            teddyDivInfo.className = 'teddy_info';
 
-    // ajout description
-    const teddyPar = document.createElement('p');
-    teddyDivInfo.appendChild(teddyPar);
-    teddyPar.textContent = teddy.description;
+            // ajout nom teddy
+            const teddyH3 = document.createElement('h3');
+            teddyDivInfo.appendChild(teddyH3);
+            teddyH3.textContent = teddy.name;
 
-    // ajout prix
-    const teddyPrice = document.createElement('p');
-    teddyDivInfo.appendChild(teddyPrice);
-    teddyPrice.textContent = "Son prix : " + teddy.price / 100 + " €";
-    teddyPrice.className = 'teddy_price';
+            // ajout description
+            const teddyPar = document.createElement('p');
+            teddyDivInfo.appendChild(teddyPar);
+            teddyPar.textContent = teddy.description;
 
-    // création choix couleur
-    const form = document.createElement('form');
-    teddyDivInfo.appendChild(form);
-    const formDiv = document.createElement('div');
-    form.appendChild(formDiv);
-    formDiv.className = 'colors_choice';
+            // ajout prix
+            const teddyPrice = document.createElement('p');
+            teddyDivInfo.appendChild(teddyPrice);
+            teddyPrice.textContent = "Son prix : " + teddy.price / 100 + " €";
+            teddyPrice.className = 'teddy_price';
 
-    const label = document.createElement('label');
-    formDiv.appendChild(label);
-    label.textContent = "Personnalisez sa couleur : ";
-    label.setAttribute('for', "Choix de couleurs de " + teddy.name);
+            // création choix couleur
+            const form = document.createElement('form');
+            teddyDivInfo.appendChild(form);
+            const formDiv = document.createElement('div');
+            form.appendChild(formDiv);
+            formDiv.className = 'colors_choice';
 
-    const select = document.createElement('select');
-    formDiv.appendChild(select);
-    select.setAttribute('name', "Choix de couleurs de " + teddy.name);
-    select.setAttribute('id', "select_1 ");
+            const label = document.createElement('label');
+            formDiv.appendChild(label);
+            label.textContent = "Personnalisez sa couleur : ";
+            label.setAttribute('for', "Choix de couleurs de " + teddy.name);
 
-    // ajout des différentes couleurs 
-    const colors = teddy.colors;
+            const select = document.createElement('select');
+            formDiv.appendChild(select);
+            select.setAttribute('name', "Choix de couleurs de " + teddy.name);
+            select.setAttribute('id', "select_1 ");
 
-    for (i = 0; i < colors.length; i++) {
-        const selectOption = document.createElement('option');
-        select.appendChild(selectOption);
-        selectOption.textContent = colors[i];
-        selectOption.setAttribute("value", colors[i]);
-    }
-    
-    // création bouton panier
-    let addTeddy = document.createElement('button');
-    form.appendChild(addTeddy);
-    addTeddy.type = 'submit';
-    addTeddy.name = 'add';
-    addTeddy.id = 'submit';
-    addTeddy.textContent = "Ajouter au panier"
+            // ajout des différentes couleurs 
+            const colors = teddy.colors;
 
-    // récupérations données et envoie au panier
-    addTeddy.addEventListener("click", function (event) {
-        event.preventDefault();
-
-    // stockage des données du/des teddy souhaité dans localStorage
-        let teddiesChoosen = {
-            teddyName: teddy.name,
-            teddyId: teddy._id,
-            teddyColor: select.value,
-            quantity: 1,
-            teddyPrice: teddy.price / 100,
-        };
-
-        let storedTeddies = JSON.parse(localStorage.getItem('newArticle'));
-        const teddyColor = select.value;
-        if(storedTeddies) {
-            storedTeddies.push(teddiesChoosen);
-            localStorage.setItem('newArticle', JSON.stringify(storedTeddies));
-            console.log(storedTeddies);
-            if (window.confirm(teddy.name + " " + teddyColor + ' a bien été ajouté. Souhaitez vous consulter votre panier ?')) { 
-                window.location.href = "panier.html";
+            for (i = 0; i < colors.length; i++) {
+                const selectOption = document.createElement('option');
+                select.appendChild(selectOption);
+                selectOption.textContent = colors[i];
+                selectOption.setAttribute("value", colors[i]);
             }
+            
+            // création bouton panier
+            let addTeddy = document.createElement('button');
+            form.appendChild(addTeddy);
+            addTeddy.type = 'submit';
+            addTeddy.name = 'add';
+            addTeddy.id = 'submit';
+            addTeddy.textContent = "Ajouter au panier"
+
+            // récupérations données et envoie au panier
+            addTeddy.addEventListener("click", function (event) {
+                event.preventDefault();
+
+            // stockage des données du/des teddy souhaité dans localStorage
+                let teddiesChoosen = {
+                    teddyName: teddy.name,
+                    teddyId: teddy._id,
+                    teddyColor: select.value,
+                    quantity: 1,
+                    teddyPrice: teddy.price / 100,
+                };
+
+                let storedTeddies = JSON.parse(localStorage.getItem('newArticle'));
+                const teddyColor = select.value;
+                if(storedTeddies) {
+                    storedTeddies.push(teddiesChoosen);
+                    localStorage.setItem('newArticle', JSON.stringify(storedTeddies));
+                    console.log(storedTeddies);
+                    if (window.confirm(teddy.name + " " + teddyColor + ' a bien été ajouté. Souhaitez vous consulter votre panier ?')) { 
+                        window.location.href = "panier.html";
+                    }
+                } else {
+                    storedTeddies = [];
+                    storedTeddies.push(teddiesChoosen);
+                    localStorage.setItem('newArticle', JSON.stringify(storedTeddies));
+                    console.log(storedTeddies);
+                    if (window.confirm(teddy.name + " " + teddyColor + ' a bien été ajouté. Souhaitez vous consulter votre panier ?')) { 
+                        window.location.href = "panier.html";
+                    }
+                }
+            })
         } else {
-            storedTeddies = [];
-            storedTeddies.push(teddiesChoosen);
-            localStorage.setItem('newArticle', JSON.stringify(storedTeddies));
-            console.log(storedTeddies);
-            if (window.confirm(teddy.name + " " + teddyColor + ' a bien été ajouté. Souhaitez vous consulter votre panier ?')) { 
-                window.location.href = "panier.html";
-            }
-        }
-    });
+            console.error('Retour du serveur : ', response.status);
+        } 
+    } catch (error) {
+        alert("Erreur : " + error);
+    }
 }
 
 //appel de la fonction getTeddies
