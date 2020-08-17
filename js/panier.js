@@ -304,6 +304,7 @@ submit.addEventListener("click", function (event) {
                 } else {
                     event.preventDefault();
                     console.error('Retour du serveur : ', response.status);
+                    alert(('Erreur rencontrée : ' + response.status));
                 } 
             } catch (error) {
                 alert("Erreur : " + error);

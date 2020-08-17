@@ -10,7 +10,6 @@ const getTeddies = async function() {
         let response = await fetch('http://localhost:3000/api/teddies/');
         if (response.ok) {
             let teddies = await response.json();
-            console.log(teddies); 
 
             // récupération des données du teddy de la page par son id
             const teddy = teddies.find(x => x['_id'] === id);
@@ -129,6 +128,7 @@ const getTeddies = async function() {
             })
         } else {
             console.error('Retour du serveur : ', response.status);
+            alert(('Erreur rencontrée : ' + response.status));
         } 
     } catch (error) {
         alert("Erreur : " + error);
