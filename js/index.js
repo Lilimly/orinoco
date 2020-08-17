@@ -1,7 +1,7 @@
 const getTeddies =  async function() {
     //récupération des données de l'API 
     try {
-        let response = await fetch('http://localhost:3000/api/teddiespr/');
+        let response = await fetch('http://localhost:3000/api/teddies/');
         if (response.ok) {
             let teddies = await response.json();
             console.log(teddies);
