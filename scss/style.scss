@@ -226,6 +226,21 @@ footer {
             .teddy_price {
                 display: flex;
                 font-weight: 500;
+                button{
+                    margin: auto 20px auto auto;
+                    background-color: $body_color;
+                    color: $section_color;
+                    border-radius: 10px;
+                    font-size: 1em;
+                    padding: 8px;
+                    transform: scale(1);
+                    transition: transform 300ms ease-in-out;
+                    &:hover {
+                        background-color: $primary_color;
+                        transform: scale(1.1);
+                        color: $hover_color_link;
+                    }
+                }
             }
         }   
         .icon_garbage {

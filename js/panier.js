@@ -40,6 +40,16 @@ if(storedTeddies == null){
         const price = document.createElement('p');
         teddyPrice.appendChild(price);
         price.textContent = storedTeddy.teddyPrice + " €"
+
+        // création bouton suppression d'un teddy
+        const garbageButton = document.createElement('button');
+        teddyPrice.appendChild(garbageButton);
+        garbageButton.className = 'garbage_button';
+        garbageButton.title = 'Supprimer cet article ?';
+
+        const iconButton = document.createElement('i');
+        garbageButton.appendChild(iconButton);
+        iconButton.className = 'fas fa-trash-alt';
     };
 
     //calcul du montant total
@@ -302,7 +312,7 @@ if(storedTeddies == null){
                     } else {
                         event.preventDefault();
                         console.error('Retour du serveur : ', response.status);
-                        alert(('Erreur rencontrée : ' + response.status));
+                        alert('Erreur rencontrée : ' + response.status);
                     } 
                 } catch (error) {
                     alert("Erreur : " + error);
@@ -313,4 +323,4 @@ if(storedTeddies == null){
     });
 };
 
-//const teddy = teddies.find(x => x['_id'] === id);
+//const find = teddy.find(x => x['_id'] === id);
