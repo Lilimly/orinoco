@@ -16,40 +16,38 @@ const teddyH3 = document.createElement('h3');
 teddyDivCart.appendChild(teddyH3);
 teddyH3.textContent = "Vos oursons :";
 
-// si le panier est vide 
 if(storedTeddies == null){
+    // si le panier est vide 
     const emptyCart = document.createElement('p');
     teddyDivCart.appendChild(emptyCart);
     emptyCart.className = "empty_cart";
     emptyCart.textContent = "Votre panier est tristement vide !"
-}
+} else {
+    // si des éléments sont présents dans le panier : récupération des éléments du panier
+    for (storedTeddy of storedTeddies) {
+        const eachTeddy = document.createElement('div');
+        teddyDivCart.appendChild(eachTeddy);
+        eachTeddy.className = 'each_teddy';
 
-// récupération des éléments du panier
-for (storedTeddy of storedTeddies) {
-    const eachTeddy = document.createElement('div');
-    teddyDivCart.appendChild(eachTeddy);
-    eachTeddy.className = 'each_teddy';
+        const teddiesCart = document.createElement('p');
+        eachTeddy.appendChild(teddiesCart);
+        teddiesCart.textContent = storedTeddy.quantity + " " + storedTeddy.teddyName + " , " + storedTeddy.teddyColor;
 
-    const teddiesCart = document.createElement('p');
-    eachTeddy.appendChild(teddiesCart);
-    teddiesCart.textContent = storedTeddy.quantity + " " + storedTeddy.teddyName + " , " + storedTeddy.teddyColor;
+        const teddyPrice = document.createElement('div');
+        eachTeddy.appendChild(teddyPrice);
+        teddyPrice.className = 'teddy_price';
 
-    const teddyPrice = document.createElement('div');
-    eachTeddy.appendChild(teddyPrice);
-    teddyPrice.className = 'teddy_price';
-
-    const price = document.createElement('p');
-    teddyPrice.appendChild(price);
-    price.textContent = storedTeddy.teddyPrice + " €"
+        const price = document.createElement('p');
+        teddyPrice.appendChild(price);
+        price.textContent = storedTeddy.teddyPrice + " €"
+    }
 }
 
 //calcul du montant total
 let calculPrice = []
 for (storedTeddy of storedTeddies) {
     let article = storedTeddy.teddyPrice;
-    let quantity = storedTeddy.quantity
-    let calcul = article * quantity;
-    calculPrice.push(calcul)
+    calculPrice.push(article);
 };
 
 const reducer = (accumulator, currentValue) => accumulator + currentValue;
