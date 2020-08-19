@@ -50,7 +50,7 @@ if(storedTeddies == null){
     };
 
     const reducer = (accumulator, currentValue) => accumulator + currentValue;
-    const totalPrice = calculPrice.reduce(reducer);
+    const totalPrice = calculPrice.reduce(reducer, 0);
     console.log(totalPrice);
 
     const total = document.createElement('p');
@@ -312,3 +312,5 @@ if(storedTeddies == null){
         } 
     });
 };
+
+//const teddy = teddies.find(x => x['_id'] === id);

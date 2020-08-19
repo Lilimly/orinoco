@@ -5,14 +5,11 @@ const id = urlParams.get('id');
 console.log(id);
 
 const getTeddies = async function() {
-    //récupération des données de l'API 
+     // récupération des données du teddy sélectionné par son id
     try {
-        let response = await fetch('http://localhost:3000/api/teddies/');
+        let response = await fetch('http://localhost:3000/api/teddies/' + id);
         if (response.ok) {
-            let teddies = await response.json();
-
-            // récupération des données du teddy de la page par son id
-            const teddy = teddies.find(x => x['_id'] === id);
+            let teddy = await response.json();
             console.log(teddy);
 
             // création h2 de la page
@@ -125,15 +122,15 @@ const getTeddies = async function() {
                         window.location.href = "index.html";
                     }
                 }
-            })
+            });
         } else {
             console.error('Retour du serveur : ', response.status);
-            alert(('Erreur rencontrée : ' + response.status));
+            alert('Erreur rencontrée : ' + response.status);
         } 
     } catch (error) {
         alert("Erreur : " + error);
     }
-}
+};
 
 //appel de la fonction getTeddies
 getTeddies();
