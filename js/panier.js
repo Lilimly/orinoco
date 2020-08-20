@@ -24,10 +24,12 @@ if(storedTeddies == null){
     emptyCart.textContent = "Votre panier est tristement vide !"
 } else {
     // si des éléments sont présents dans le panier : récupération des éléments du panier
+    let i = 0;
     for (storedTeddy of storedTeddies) {
         const eachTeddy = document.createElement('div');
         teddyDivCart.appendChild(eachTeddy);
         eachTeddy.className = 'each_teddy';
+        
 
         const teddiesCart = document.createElement('p');
         eachTeddy.appendChild(teddiesCart);
@@ -36,6 +38,7 @@ if(storedTeddies == null){
         const teddyPrice = document.createElement('div');
         eachTeddy.appendChild(teddyPrice);
         teddyPrice.className = 'teddy_price';
+        teddyPrice.id = i++;
 
         const price = document.createElement('p');
         teddyPrice.appendChild(price);
@@ -50,7 +53,28 @@ if(storedTeddies == null){
         const iconButton = document.createElement('i');
         garbageButton.appendChild(iconButton);
         iconButton.className = 'fas fa-trash-alt';
+
     };
+
+    let garbageButton = document.getElementsByClassName('garbage_button');
+    for (let i = 0 ; i < garbageButton.length; i++) {
+        garbageButton[i].addEventListener('click' , function (event) { 
+            event.preventDefault();
+            let id = this.closest('.teddy_price').id;
+            console.log(id);
+
+            const removeTeddy = storedTeddies.splice(id, 1);
+            console.log(removeTeddy);
+            console.log(storedTeddies);
+
+            localStorage.setItem('newArticle', JSON.stringify(storedTeddies));
+            JSON.parse(localStorage.getItem('newArticle'));
+
+            alert('Cet article a bien été supprimé !')
+            window.location.href = "panier.html";   
+        } , false ) ; 
+     }
+
 
     //calcul du montant total
     let calculPrice = []
@@ -86,9 +110,9 @@ if(storedTeddies == null){
 
     garbage.addEventListener("click", function (event) {
         event.preventDefault();
-            alert('Votre panier a bien été vidé !')
-            localStorage.removeItem('newArticle');
-            window.location.href = "panier.html";
+        localStorage.removeItem('newArticle');
+        alert('Votre panier a bien été vidé !')
+        window.location.href = "panier.html";
     });
 
     //création du formulaire de commande
@@ -322,5 +346,3 @@ if(storedTeddies == null){
         } 
     });
 };
-
-//const find = teddy.find(x => x['_id'] === id);
