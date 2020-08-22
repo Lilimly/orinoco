@@ -101,7 +101,6 @@ const getTeddies = async function() {
                 console.log(teddiesChoosen);
 
                 let storedTeddies = JSON.parse(localStorage.getItem('newArticle'));
-                //const findTeddy = teddy.find(x => x['_id'] === id);
                 const teddyColor = select.value;
                 if(storedTeddies) {
                     storedTeddies.push(teddiesChoosen);
@@ -112,10 +111,7 @@ const getTeddies = async function() {
                     } else {
                         window.location.href = "index.html";
                     }
-                } /*else if (teddiesChoosen == storedTeddies) {
-                    console.log("find teddy !")
-
-                }*/ else {
+                } else {
                     storedTeddies = [];
                     storedTeddies.push(teddiesChoosen);
                     localStorage.setItem('newArticle', JSON.stringify(storedTeddies));
@@ -138,3 +134,9 @@ const getTeddies = async function() {
 
 //appel de la fonction getTeddies
 getTeddies();
+
+/*else if (storedTeddies && teddiesChoosen == storedTeddies) {
+    const findTeddy = teddy.find(x => x['_id'] === id);
+    console.log(findTeddy);
+
+}*/ 

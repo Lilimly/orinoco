@@ -55,7 +55,7 @@ if(storedTeddies == null){
         iconButton.className = 'fas fa-trash-alt';
 
     };
-
+    // on récupére l'article associé au bouton poubelle
     let garbageButton = document.getElementsByClassName('garbage_button');
     for (let i = 0 ; i < garbageButton.length; i++) {
         garbageButton[i].addEventListener('click' , function (event) { 
@@ -63,10 +63,12 @@ if(storedTeddies == null){
             let id = this.closest('.teddy_price').id;
             console.log(id);
 
+            //on supprime l'article du localStorage
             const removeTeddy = storedTeddies.splice(id, 1);
             console.log(removeTeddy);
             console.log(storedTeddies);
 
+            //on enregistre le nouveau localStorage
             localStorage.setItem('newArticle', JSON.stringify(storedTeddies));
             JSON.parse(localStorage.getItem('newArticle'));
 
