@@ -69,7 +69,7 @@ if(storedTeddies == null || storedTeddies.length === 0){
             localStorage.setItem('newArticle', JSON.stringify(storedTeddies));
             JSON.parse(localStorage.getItem('newArticle'));
 
-            alert('Cet article a bien été supprimé !')
+            alert('Cet article a bien été supprimé !');
             window.location.href = "panier.html";   
         }); 
     };
@@ -341,9 +341,6 @@ if(storedTeddies == null || storedTeddies.length === 0){
                 } 
             };
             post(send);
-        } else {
-            event.preventDefault();
-            alert('Formulaire non valide');
-        } 
+        }
     });
 };
