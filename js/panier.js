@@ -63,7 +63,7 @@ if(storedTeddies == null || storedTeddies.length === 0){
             let id = this.closest('.teddy_price').id;
 
             //on supprime l'article du localStorage
-            const removeTeddy = storedTeddies.splice(id, 1);
+            storedTeddies.splice(id, 1);
 
             //on enregistre le nouveau localStorage
             localStorage.setItem('newArticle', JSON.stringify(storedTeddies));
@@ -71,8 +71,8 @@ if(storedTeddies == null || storedTeddies.length === 0){
 
             alert('Cet article a bien été supprimé !')
             window.location.href = "panier.html";   
-        } , false ) ; 
-     }
+        }); 
+    };
 
     //calcul du montant total
     let calculPrice = []
