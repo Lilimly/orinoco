@@ -16,7 +16,7 @@ const teddyH3 = document.createElement('h3');
 teddyDivCart.appendChild(teddyH3);
 teddyH3.textContent = "Vos oursons :";
 
-if(storedTeddies == null){
+if(storedTeddies == null || storedTeddies.length === 0){
     // si le panier est vide 
     const emptyCart = document.createElement('p');
     teddyDivCart.appendChild(emptyCart);
@@ -76,7 +76,6 @@ if(storedTeddies == null){
             window.location.href = "panier.html";   
         } , false ) ; 
      }
-
 
     //calcul du montant total
     let calculPrice = []
