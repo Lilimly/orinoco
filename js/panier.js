@@ -61,12 +61,9 @@ if(storedTeddies == null || storedTeddies.length === 0){
         garbageButton[i].addEventListener('click' , function (event) { 
             event.preventDefault();
             let id = this.closest('.teddy_price').id;
-            console.log(id);
 
             //on supprime l'article du localStorage
             const removeTeddy = storedTeddies.splice(id, 1);
-            console.log(removeTeddy);
-            console.log(storedTeddies);
 
             //on enregistre le nouveau localStorage
             localStorage.setItem('newArticle', JSON.stringify(storedTeddies));
@@ -344,6 +341,9 @@ if(storedTeddies == null || storedTeddies.length === 0){
                 } 
             };
             post(send);
+        } else {
+            event.preventDefault();
+            alert('Formulaire non valide');
         } 
     });
 };
