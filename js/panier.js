@@ -263,7 +263,7 @@ if(storedTeddies == null || storedTeddies.length === 0){
         if (validMail(mail.value)){
         } else {
             event.preventDefault()
-            alert("Veuillez saisir une adresse mail valide.");
+            alert("Veuillez saisir une adresse mail valide (exemple : abcd@mail.com).");
         }
     });
 
